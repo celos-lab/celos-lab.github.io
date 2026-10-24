@@ -8,28 +8,29 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 
 <section id="projects" class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
   <SectionHeading title={t('projects.title')} />
+  <!-- Phones keep the three columns: smaller type and padding, no minimum width, so Budget stays in view. -->
   <div class="reveal mt-6 overflow-x-auto rounded-2xl border border-line bg-surface shadow-sm">
-    <table class="w-full min-w-[40rem] text-left text-sm">
+    <table class="w-full text-left text-xs sm:min-w-[40rem] sm:text-sm">
       <thead class="bg-brand-navy text-white">
         <tr>
-          <th scope="col" class="w-[6.5rem] py-3 pr-2 pl-4 font-semibold">{t('projects.period')}</th>
-          <th scope="col" class="px-4 py-3 font-semibold">{t('projects.name')}</th>
-          <th scope="col" class="w-40 px-4 py-3 text-right font-semibold">{t('projects.budget')}</th>
+          <th scope="col" class="w-[4.25rem] py-3 pr-1 pl-3 font-semibold sm:w-[6.5rem] sm:pr-2 sm:pl-4">{t('projects.period')}</th>
+          <th scope="col" class="px-2 py-3 font-semibold sm:px-4">{t('projects.name')}</th>
+          <th scope="col" class="py-3 pr-3 pl-1 text-right font-semibold sm:w-40 sm:px-4">{t('projects.budget')}</th>
         </tr>
       </thead>
       <tbody class="divide-y divide-line">
         {projects.map((p) => (
           <tr class="align-top transition hover:bg-card">
-            <td class="py-3.5 pr-2 pl-4 text-xs leading-relaxed text-muted tabular-nums">
+            <td class="py-3 pr-1 pl-3 text-[0.65rem] leading-relaxed text-muted tabular-nums sm:py-3.5 sm:pr-2 sm:pl-4 sm:text-xs">
               {p.data.period.split(' - ').map((d, i) => <span class="block">{d}{i === 0 && p.data.period.includes(' - ') ? ' ~' : ''}</span>)}
             </td>
-            <td class="px-4 py-3.5">
+            <td class="px-2 py-3 sm:px-4 sm:py-3.5">
               <p class="font-semibold leading-snug">
-                {p.data.title} <span lang="ko" class="text-xs font-normal text-muted">- {p.data.titleKo}</span>
-                <span title={p.data.agencyKo} class="ml-1 inline-block rounded-full bg-accent/10 px-2 py-0.5 align-[1px] text-[0.7rem] leading-4 font-semibold whitespace-nowrap text-accent-deep">{p.data.agency}</span>
+                {p.data.title} <span lang="ko" class="text-[0.7rem] font-normal text-muted sm:text-xs">- {p.data.titleKo}</span>
+                <span title={p.data.agencyKo} class="ml-1 inline-block rounded-full bg-accent/10 px-2 py-0.5 align-[1px] text-[0.65rem] leading-4 font-semibold text-accent-deep sm:text-[0.7rem] sm:whitespace-nowrap">{p.data.agency}</span>
               </p>
             </td>
-            <td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap text-brand-navy">{p.data.budget.replace(" (in kind)", "").trim()}{p.data.budget.includes("(in kind)") && <span class="block text-xs font-medium text-muted">(in kind)</span>}</td>
+            <td class="py-3 pr-3 pl-1 text-right text-[0.7rem] font-semibold whitespace-nowrap text-brand-navy sm:px-4 sm:py-3.5 sm:text-sm">{p.data.budget.replace(" (in kind)", "").trim()}{p.data.budget.includes("(in kind)") && <span class="block text-[0.65rem] font-medium text-muted sm:text-xs">(in kind)</span>}</td>
           </tr>
         ))}
       </tbody>

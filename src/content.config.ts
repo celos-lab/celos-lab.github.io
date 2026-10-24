@@ -3,6 +3,7 @@ import { file } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const text = z.object({ en: z.string(), ko: z.string() });
+const name = z.object({ en: z.string(), ko: z.string().optional() });
 
 const research = defineCollection({
   loader: file('src/data/research.yaml'),
@@ -30,7 +31,7 @@ const members = defineCollection({
   schema: z.object({
     order: z.number(),
     role: z.enum(['pi', 'phd', 'ms', 'undergrad', 'alumni']),
-    name: text,
+    name,
     course: text,
     topics: z.array(z.string()),
     email: z.string().email().optional(),

@@ -14,8 +14,6 @@ const roleStyle: Record<string, string> = {
   undergrad: 'bg-accent-soft/15 text-accent-soft ring-accent-soft/30',
 };
 const initials = (name: string) => name.split(' ').map((w) => w[0]).join('').slice(0, 2);
-// Korean name is shown only when it differs from the English one.
-const ko = (m: (typeof all)[number]) => (m.data.name.ko !== m.data.name.en ? m.data.name.ko : '');
 ---
 
 <section id="members" class="section-dark">
@@ -47,10 +45,9 @@ const ko = (m: (typeof all)[number]) => (m.data.name.ko !== m.data.name.en ? m.d
             )}
           </div>
           <div class="p-2 sm:p-3">
-            <p class="text-sm font-bold sm:text-base">{m.data.name.en} {ko(m) && <span lang="ko" class="text-xs font-medium text-white/65">{ko(m)}</span>}</p>
+            <p class="text-sm font-bold sm:text-base">{m.data.name.en}</p>
             <p class={`mt-1.5 inline-block rounded-full px-1.5 py-0.5 text-[0.6rem] font-semibold ring-1 sm:px-2 sm:text-[0.7rem] ${roleStyle[m.data.role] ?? roleStyle.undergrad}`}>{m.data.course.en}</p>
             {m.data.topics.length > 0 && <p class="mt-2 text-[0.65rem] leading-snug text-white/60 sm:text-xs">{m.data.topics.join(', ')}</p>}
-            {m.data.email && <a href={`mailto:${m.data.email}`} class="mt-2 block truncate text-[0.65rem] text-white/60 hover:text-white sm:text-xs">{m.data.email}</a>}
           </div>
         </li>
       ))}
@@ -64,7 +61,7 @@ const ko = (m: (typeof all)[number]) => (m.data.name.ko !== m.data.name.en ? m.d
             <li class="reveal block-dark flex items-center gap-4 p-4">
               <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-brand-navy text-sm font-bold text-white/80">{initials(m.data.name.en)}</span>
               <div class="min-w-0">
-                <p class="font-semibold">{m.data.name.en} {ko(m) && <span lang="ko" class="text-xs font-medium text-white/65">{ko(m)}</span>}</p>
+                <p class="font-semibold">{m.data.name.en}</p>
                 <p class="text-xs text-white/60">{m.data.course.en}{m.data.note && `, ${m.data.note}`}</p>
                 {m.data.topics.length > 0 && <p class="text-xs text-white/60">{m.data.topics.join(', ')}</p>}
               </div>

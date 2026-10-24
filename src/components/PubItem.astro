@@ -1,5 +1,5 @@
 ---
-// One publication row: year, title (with status), authors (PI in bold), venue, JCR and award badges.
+// One publication row: year, then title, authors (PI in bold) and venue on one line, with JCR and award badges.
 // Badge colors are limited to gray (status), red (JCR rank) and blue (award).
 import type { CollectionEntry } from 'astro:content';
 
@@ -7,24 +7,22 @@ interface Props {
   pub: CollectionEntry<'publications'>;
 }
 const p = Astro.props.pub.data;
-const authors = p.authors.replace(/Han, S\./g, '<b class="text-brand-navy">Han, S.</b>');
+// End the title and the author list with a period unless they already end with punctuation.
+const stop = (t: string) => (/[.?!]$/.test(t) ? t : `${t}.`);
+const title = stop(p.title);
+const authors = stop(p.authors).replace(/Han, S\./g, '<b class="text-brand-navy">Han, S.</b>');
 ---
 
-<li class="grid gap-x-6 gap-y-1 py-3 sm:grid-cols-[3.5rem_1fr]">
-  <span class="font-mono text-sm text-faint">{p.year}</span>
-  <div>
-    <p class="font-semibold leading-snug">
-      {p.status && <span class="mr-2 rounded bg-slate-200/70 px-1.5 py-0.5 text-xs font-semibold text-slate-600">{p.status}</span>}
-      {p.title}
-    </p>
-    <p class="mt-1 text-sm text-muted" set:html={authors} />
-    <p class="mt-1 text-sm">
-      <i class="font-semibold text-accent-deep">{p.venue}</i>
-      {p.details && <span class="text-muted">, {p.details}</span>}
-      {p.jcr && (
-        <span class={`ml-2 inline-block rounded px-1.5 py-0.5 text-xs font-semibold ${p.q1 ? 'bg-celos-red text-white' : 'bg-celos-red/10 text-celos-red'}`}>{p.jcr}</span>
-      )}
-      {p.award && <span class="ml-2 inline-block rounded bg-accent/10 px-1.5 py-0.5 text-xs font-semibold text-accent-deep">🏅 {p.award}</span>}
-    </p>
-  </div>
+<li class="grid gap-x-6 gap-y-1 py-2.5 sm:grid-cols-[3.5rem_1fr]">
+  <span class="font-mono text-sm leading-6 text-faint">{p.year}</span>
+  <p class="text-sm leading-6">
+    {p.status && <span class="mr-1.5 rounded bg-slate-200/70 px-1.5 py-0.5 text-xs font-semibold text-slate-600">{p.status}</span>}
+    <span class="font-semibold text-ink">{title}</span>{' '}
+    <span class="text-muted" set:html={authors} />{' '}
+    <i class="font-semibold text-accent-deep">{p.venue}</i>{p.details && <span class="text-muted">, {p.details}</span>}
+    {p.jcr && (
+      <span class={`ml-1.5 inline-block rounded px-1.5 py-0.5 text-xs leading-4 font-semibold ${p.q1 ? 'bg-celos-red text-white' : 'bg-celos-red/10 text-celos-red'}`}>{p.jcr}</span>
+    )}
+    {p.award && <span class="ml-1.5 inline-block rounded bg-accent/10 px-1.5 py-0.5 text-xs leading-4 font-semibold text-accent-deep">🏅 {p.award}</span>}
+  </p>
 </li>

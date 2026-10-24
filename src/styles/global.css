@@ -33,7 +33,12 @@
 
 }
 
+/*
+ * `only light` keeps browser-side forced darkening (Chrome "darken websites", Samsung Internet
+ * dark mode and the like) from recoloring the light theme; the site has its own dark theme.
+ */
 html {
+  color-scheme: only light;
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
   -webkit-font-smoothing: antialiased;

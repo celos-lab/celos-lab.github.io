@@ -62,6 +62,8 @@ const jsonLd = [
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!-- Light only, so browsers do not force-darken it; switched to dark by the theme toggle. -->
+    <meta id="color-scheme" name="color-scheme" content="only light" />
     <script is:inline>
       // `js` gates the scroll animations. Light is the default; `dark` only after the visitor picks it
       // with the header toggle (PI decision 2026-10-25).
@@ -70,7 +72,10 @@ const jsonLd = [
         d.classList.add('js');
         let saved = null;
         try { saved = localStorage.getItem('theme'); } catch {}
-        if (saved === 'dark') d.classList.add('dark');
+        if (saved === 'dark') {
+          d.classList.add('dark');
+          document.getElementById('color-scheme').content = 'dark';
+        }
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -199,6 +204,7 @@ const jsonLd = [
       themeBtn.addEventListener('click', () => {
         const dark = root.classList.toggle('dark');
         themeBtn.setAttribute('aria-pressed', String(dark));
+        (document.getElementById('color-scheme') as HTMLMetaElement).content = dark ? 'dark' : 'only light';
         try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch {}
       });
 

@@ -1,0 +1,26 @@
+---
+// Looping, muted demo clip converted from the original GIF (public/media/<name>.mp4 + .webp poster).
+// It does not autoplay on load: the script in Base.astro plays it only while it is on screen.
+// Data saver keeps every clip on its poster.
+interface Props {
+  name: string;
+  alt: string;
+  class?: string;
+  decorative?: boolean;
+}
+const { name, alt, class: className = '', decorative = false } = Astro.props;
+---
+
+<video
+  class={`h-full w-full object-cover ${className}`}
+  src={`/media/${name}.mp4`}
+  poster={`/media/${name}.webp`}
+  data-autoplay={decorative ? 'decorative' : 'content'}
+  muted
+  loop
+  playsinline
+  preload="none"
+  aria-label={decorative ? undefined : alt}
+  aria-hidden={decorative ? 'true' : undefined}
+  title={decorative ? undefined : alt}
+></video>

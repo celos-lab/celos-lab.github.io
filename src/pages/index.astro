@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import OnePage from '../components/OnePage.astro';
+import { publicationsJsonLd } from '../lib/jsonld';
+---
+
+<Base extraJsonLd={[await publicationsJsonLd()]}>
+  <OnePage />
+</Base>

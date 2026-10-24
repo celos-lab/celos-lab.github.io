@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import SectionHeading from '../SectionHeading.astro';
+import Video from '../Video.astro';
+import { t } from '../../i18n/ui';
+import { rich } from '../../lib/emph';
+
+const news = (await getCollection('news')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const PREVIEW = 6;
+// Three tag colors only: red for achievements, blue for new members and starts, gray for the rest.
+const red = 'bg-celos-red/10 text-celos-red';
+const blue = 'bg-accent/10 text-accent-deep';
+const gray = 'bg-slate-200/70 text-slate-600';
+const tagStyle: Record<string, string> = { Achievement: red, New: blue, Start: blue, Visit: gray, Birth: gray };
+---
+
+<section id="news" class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
+  <SectionHeading title={t('news.title')} />
+
+  <article class="reveal card-a-dark mt-6 grid max-w-4xl items-center gap-5 overflow-hidden rounded-2xl p-5 shadow-xl shadow-brand-navy/10 sm:grid-cols-[1fr_16rem] sm:p-6">
+    <div>
+      <span class="inline-block rounded-full bg-white/20 px-2.5 py-0.5 text-[0.7rem] font-semibold uppercase tracking-wider">🏆 {t('news.featured')}</span>
+      <h3 class="mt-2 text-lg font-bold leading-snug sm:text-xl">
+        {t('news.featured.title')} <span lang="ko" class="text-sm font-normal text-white/85">- {t('news.featured.titleKo')}</span>
+      </h3>
+    </div>
+    <div class="overflow-hidden rounded-lg shadow-xl shadow-brand-navy/40">
+      <div class="aspect-video"><Video name="wlr_iros2025" alt="IROS 2025 wheel-legged robot competition run" /></div>
+    </div>
+  </article>
+
+  <div class="reveal mt-5" data-collapsible>
+  <div class="overflow-x-auto rounded-2xl border border-line bg-white shadow-sm">
+    <table class="rich rich-blue w-full min-w-[28rem] text-left text-sm">
+      <thead class="bg-brand-black text-white">
+        <tr>
+          <th scope="col" class="w-36 px-5 py-3 font-semibold">{t('news.tag')}</th>
+          <th scope="col" class="px-5 py-3 font-semibold">{t('news.item')}</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-line">
+        {news.map((n, i) => (
+          <tr class={`align-top transition hover:bg-card ${i >= PREVIEW ? 'extra' : ''}`}>
+            <td class="px-5 py-3"><span class={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${tagStyle[n.data.tag]}`}>{n.data.tag}</span></td>
+            <td class="px-5 py-3 text-ink">
+              <span set:html={rich(n.data.title)} />
+              {n.data.titleKo && <span lang="ko" class="text-xs text-muted" set:html={` - ${rich(n.data.titleKo)}`} />}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  {news.length > PREVIEW && (
+    <button type="button" data-collapse-btn data-less={`${t('pubs.showLess')} ▴`} class="mt-3 rounded-md bg-brand-black px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-navy">
+      {t('pubs.showAll')} ({news.length}) ▾
+    </button>
+  )}
+  </div>
+</section>

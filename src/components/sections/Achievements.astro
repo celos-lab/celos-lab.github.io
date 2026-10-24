@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+import SectionHeading from '../SectionHeading.astro';
+import PubItem from '../PubItem.astro';
+import { t } from '../../i18n/ui';
+import { rich } from '../../lib/emph';
+
+// YAML order (newest first) is kept through the explicit `order` field.
+const pubs = (await getCollection('publications')).sort((a, b) => a.data.order - b.data.order);
+const UNDER_REVIEW = 5;
+// Rows visible before "Show all"; the rest stay in the HTML (indexable) inside <details>.
+const PREVIEW = 5;
+
+const groups = [
+  { key: 'international', label: t('pubs.international') },
+  { key: 'domestic', label: t('pubs.domestic') },
+  { key: 'ip', label: t('pubs.ip') },
+] as const;
+
+const awards = (await getCollection('awards')).sort((a, b) => a.data.order - b.data.order);
+const count = (g: string) => pubs.filter((p) => p.data.group === g).length;
+const q12 = pubs.filter((p) => p.data.kind === 'journal' && /^Q[12]/.test(p.data.jcr ?? '')).length;
+// `sub` is the Q1/Q2 journal count shown in parentheses next to the international total.
+const stats = [
+  { value: count('international'), sub: q12, label: ['International', 'Publications', '(Q1/Q2 Journal)'], style: 'card-a-dark' },
+  { value: count('domestic'), label: ['Domestic', 'Publications'], style: 'card-b' },
+  { value: count('ip'), label: ['Patent &', 'Tech. Transfer'], style: 'bg-brand-black text-white' },
+  { value: awards.length, label: ['Awards'], style: 'bg-brand-black text-white' },
+];
+---
+<!-- Achievements: four number tiles, then the publication lists, then the award photo cards. -->
+<section id="achievements" class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
+  <SectionHeading title={t('achievements.title')} />
+
+  <dl class="mt-6 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
+    {stats.map((s, i) => (
+      <div class={`reveal flex items-center justify-between gap-2 rounded-xl px-3 py-3 sm:gap-3 sm:px-5 sm:py-3.5 shadow-lg shadow-brand-navy/10 ${s.style}`} style={`transition-delay:${i * 60}ms`}>
+        <dt class="text-xs leading-tight font-semibold text-white/85 sm:text-sm">{s.label.map((l, j) => <>{j > 0 && <br />}{l}</>)}</dt>
+        <dd class="text-2xl font-extrabold tracking-tight whitespace-nowrap sm:text-4xl">
+          <span data-count={s.value}>{s.value}</span>{s.sub !== undefined && <span class="ml-1 text-lg font-bold text-white/75 sm:ml-1.5 sm:text-3xl">(<span data-count={s.sub}>{s.sub}</span>)</span>}
+        </dd>
+      </div>
+    ))}
+  </dl>
+
+  <h3 id="publications" class="display mt-12 scroll-mt-20">{t('pubs.title')}</h3>
+  <div class="mt-6 grid gap-10">
+    {groups.map((g) => {
+      const items = pubs.filter((p) => p.data.group === g.key);
+      const head = items.slice(0, PREVIEW);
+      const rest = items.slice(PREVIEW);
+      return (
+        <div class="reveal">
+          <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-b-2 border-brand-black pb-3">
+            <h3 class="text-2xl font-extrabold text-brand-black">{g.label}</h3>
+            <span class="font-mono text-sm text-faint">{items.length}</span>
+            {g.key === 'international' && <span class="text-sm text-muted">+{UNDER_REVIEW} {t('pubs.review')}</span>}
+          </div>
+          <ol class="divide-y divide-line">
+            {head.map((p) => <PubItem pub={p} />)}
+          </ol>
+          {rest.length > 0 && (
+            <details class="group">
+              <summary class="mt-2 inline-flex cursor-pointer list-none items-center gap-2 rounded-md bg-brand-black px-4 py-2 text-sm font-semibold text-white transition select-none hover:bg-brand-navy">
+                <span class="group-open:hidden">{t('pubs.showAll')} ({items.length})</span>
+                <span class="hidden group-open:inline">{t('pubs.showLess')}</span>
+                <span class="transition group-open:rotate-180">▾</span>
+              </summary>
+              <ol class="divide-y divide-line border-t border-line">
+                {rest.map((p) => <PubItem pub={p} />)}
+              </ol>
+            </details>
+          )}
+        </div>
+      );
+    })}
+  </div>
+
+  <h3 id="awards" class="display mt-12 scroll-mt-20">{t('awards.title')}</h3>
+  <!-- Small light cards, same size as the etc. cards in Research. -->
+  <ul class="rich rich-blue mt-6 grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-6">
+    {awards.map((a, i) => (
+      <li class="reveal overflow-hidden rounded-xl border border-line bg-white shadow-sm" style={`transition-delay:${i * 60}ms`}>
+        {a.data.image && (
+          <div class="aspect-[4/3] overflow-hidden bg-card">
+            <img src={`/media/awards/${a.data.image}.webp`} alt={a.data.titleKo ?? ''} class="h-full w-full object-cover" style={`object-position:${a.data.imagePos}`} loading="lazy" />
+          </div>
+        )}
+        <div class="p-2.5">
+          <p class="font-mono text-[0.7rem] text-accent-deep">{a.data.year}</p>
+          <p class="mt-0.5 text-xs font-medium leading-snug">
+            <span set:html={rich(a.data.title)} />
+            {a.data.titleKo && <span lang="ko" class="text-[0.7rem] font-normal text-muted"> - {a.data.titleKo}</span>}
+          </p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>

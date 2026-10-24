@@ -1,0 +1,59 @@
+# Current members shown on the site.
+# Source: 1_연구실관리\1_인원\members.md, rows with 공개=Y and 상태=재학/재직 (2026-10-24).
+# Only public fields: name, course, research topics, email already public on Notion, photo.
+# role: alumni = former members (members.md 상태 '구성원 아님' who were public on Notion).
+- id: seungho-han
+  order: 0
+  role: pi
+  name: { en: Seungho Han, ko: 한승호 }
+  course: { en: Assistant Professor, ko: 조교수 }
+  topics: [Optimal control, Reinforcement learning, Sensor fusion]
+  email: seunghohan@hanyang.ac.kr
+  photo: seungho-han
+- id: siheon-jo
+  order: 1
+  role: phd
+  name: { en: Siheon Jo, ko: 조시헌 }
+  course: { en: Ph.D. Student, ko: 박사과정 }
+  topics: [Multi-object tracking, LiDAR, Camera]
+  email: josehan1234@gmail.com
+  photo: siheon-jo
+- id: pranav-deshmukh
+  order: 6
+  role: undergrad
+  name: { en: Pranav Vishal Deshmukh, ko: Pranav Vishal Deshmukh }
+  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  topics: [Humanoid, Isaac Sim/Lab, ROS]
+  email: pranav.deshmukh@iitg.ac.in
+  photo: pranav-deshmukh
+  photoPos: center 25%
+- id: uijin-han
+  order: 2
+  role: undergrad
+  name: { en: Ui Jin Han, ko: 한의진 }
+  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  topics: [MPC, F1TENTH, ROS]
+  email: gksdmlwls123@hanyang.ac.kr
+  photo: uijin-han
+- id: hyeonseong-lee
+  order: 3
+  role: undergrad
+  name: { en: Hyeonseong Lee, ko: 이현성 }
+  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  topics: [MPC, F1TENTH, ROS]
+  photo: hyeonseong-lee
+  photoPos: center 62%
+- id: donggyun-woo
+  order: 4
+  role: undergrad
+  name: { en: Donggyun Woo, ko: 우동균 }
+  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  topics: [MPC, CARLA]
+  email: kepecu@naver.com
+  photo: donggyun-woo
+- id: yeonseok-lee
+  order: 5
+  role: undergrad
+  name: { en: Yeonseok Lee, ko: 이연석 }
+  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  topics: []

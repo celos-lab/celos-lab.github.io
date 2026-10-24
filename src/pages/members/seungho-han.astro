@@ -1,0 +1,149 @@
+---
+// PI page (replaces the link to the Notion CV page), one column like the Notion original.
+// Content: src/data/cv.yaml (with logos, photos and clips from public/media/cv/) and talks.yaml.
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Video from '../../components/Video.astro';
+import BrandIcon from '../../components/BrandIcon.astro';
+import { links, t } from '../../i18n/ui';
+import { rich } from '../../lib/emph';
+
+const pi = (await getEntry('members', 'seungho-han'))!.data;
+const sections = (await getCollection('cv')).sort((a, b) => a.data.order - b.data.order);
+const talks = (await getCollection('talks')).sort((a, b) => a.data.order - b.data.order);
+const profile = [
+  { label: 'ORCID', href: links.orcid, icon: 'orcid' },
+  { label: 'LinkedIn', href: links.linkedin, icon: 'linkedin' },
+  { label: 'Google Scholar', href: links.scholar, icon: 'scholar' },
+  { label: 'YouTube (CELOS Lab)', href: links.youtube, icon: 'youtube' },
+] as const;
+const mediaSize = { logo: 'h-10 w-auto', tiny: 'h-5 w-auto', small: 'w-56 rounded-lg', wide: 'w-full max-w-md rounded-lg' };
+// Class sets for the light and dark CV bands.
+const tone = {
+  light: { band: '', card: 'rounded-2xl border border-line bg-white shadow-sm', head: 'text-brand-black', text: 'text-ink/85', faint: 'text-faint', strong: 'text-brand-black!' },
+  dark: { band: 'section-dark', card: 'block-dark', head: 'text-white', text: 'text-white/80', faint: 'text-white/50', strong: 'text-white!' },
+};
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Seungho Han',
+  alternateName: '한승호',
+  jobTitle: 'Assistant Professor',
+  email: links.email,
+  image: new URL(`/media/people/${pi.photo}.webp`, Astro.site).href,
+  affiliation: { '@type': 'CollegeOrUniversity', name: 'Hanyang University' },
+  alumniOf: ['KAIST', 'Hanyang University'],
+  sameAs: [links.orcid, links.linkedin, links.scholar],
+};
+---
+
+<Base title={t('cv.title')} description={t('cv.description')} extraJsonLd={[personJsonLd]}>
+  <section id="pi" class="section-dark relative overflow-hidden pt-24 pb-10 lg:pb-12">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_circle_at_15%_10%,rgb(0_32_96/0.55),transparent_65%)]"></div>
+    <div class="relative mx-auto max-w-5xl px-5 sm:px-8">
+      <a href="/" class="text-sm text-white/60 transition hover:text-white">← {t('cv.back')}</a>
+      <div class="mt-5 grid items-center gap-6 sm:grid-cols-[12rem_1fr] md:gap-8">
+        <img src="/media/cv/ski.webp" alt="Seungho Han skiing with colleagues" width="688" height="792" class="w-48 rounded-2xl object-cover shadow-2xl shadow-black/50" />
+        <div>
+          <p class="label">{t('about.pi')}</p>
+          <h1 class="display mt-1">{t('cv.title')} <span lang="ko" class="text-2xl">{pi.name.ko}</span></h1>
+          <p class="mt-2 text-sm text-white/80 sm:text-base">{t('about.pi.title')}</p>
+          <dl class="mt-4 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
+            <div><dt class="text-white/55">Email</dt><dd><a class="font-medium hover:underline" href={`mailto:${links.email}`}>{links.email}</a></dd></div>
+            <div><dt class="text-white/55">{t('about.office')}</dt><dd class="font-medium">{t('about.office.value')}</dd></div>
+            <div class="sm:col-span-2"><dt class="text-white/55">{t('cv.topics')}</dt><dd class="font-medium">{t('cv.topics.value')}</dd></div>
+          </dl>
+          <ul class="mt-5 flex flex-wrap gap-2" aria-label={t('cv.profile')}>
+            {profile.map((p) => (
+              <li>
+                <a href={p.href} class="inline-flex items-center gap-2 rounded-md border border-white/40 py-1.5 pr-3.5 pl-2 text-sm font-semibold transition hover:bg-white hover:text-brand-black">
+                  <span class="grid h-5 w-5 place-items-center rounded bg-white"><BrandIcon name={p.icon} class="h-3.5 w-3.5" /></span>
+                  {p.label} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- One band per CV section, alternating light and dark like the home page (the header above is dark). -->
+  {sections.map((sec, i) => {
+    const c = tone[i % 2 === 0 ? 'light' : 'dark'];
+    return (
+    <section class={c.band}>
+    <div class="mx-auto max-w-5xl px-5 py-8 sm:px-8 lg:py-12">
+      <article class={`reveal rich rich-blue p-5 sm:p-7 ${c.card}`}>
+        <h2 class="bar">{sec.data.title}</h2>
+        <div class="mt-5 grid gap-5">
+          {sec.data.groups.map((g) => (
+            <div>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+                <h3 class={`font-bold ${c.head}`}>■ {g.title}</h3>
+                {g.period && <p class={`font-mono text-xs ${c.faint}`}>{g.period}</p>}
+              </div>
+              <ul class={`mt-1.5 grid gap-1 text-sm ${c.text} ${g.columns ? 'md:grid-cols-2 md:gap-x-8' : ''}`}>
+                {g.lines.map((l) =>
+                  typeof l === 'string' ? (
+                    <li class="pl-3 -indent-3" set:html={`- ${rich(l)}`} />
+                  ) : (
+                    <li class="flex items-start gap-2">
+                      <img src={`/media/cv/${l.icon}.webp`} alt="" width="20" height="20" class="mt-px h-5 w-5 shrink-0" />
+                      <span set:html={rich(l.text)} />
+                    </li>
+                  ),
+                )}
+              </ul>
+              {g.media.length > 0 && (
+                <div class="mt-3 flex flex-wrap items-end gap-4">
+                  {g.media.map((m) =>
+                    m.kind === 'image' ? (
+                      <img src={`/media/cv/${m.src}.webp`} alt={m.alt} class={mediaSize[m.size]} loading="lazy" />
+                    ) : m.kind === 'video' ? (
+                      <figure class={mediaSize[m.size]}>
+                        <div class="aspect-[800/477] overflow-hidden rounded-lg bg-black"><Video name={`cv/${m.src}`} alt={m.alt} /></div>
+                        <figcaption class={`mt-1 text-xs ${c.faint}`}>{m.alt}</figcaption>
+                      </figure>
+                    ) : (
+                      <div class={`aspect-video overflow-hidden ${mediaSize[m.size]}`}>
+                        <iframe
+                          src={`https://www.youtube-nocookie.com/embed/${m.src}`}
+                          title={m.alt}
+                          loading="lazy"
+                          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          class="h-full w-full"
+                        ></iframe>
+                      </div>
+                    ),
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+
+          {sec.id === 'academic' && (
+            <div>
+              <h3 class={`font-bold ${c.head}`}>■ {t('cv.talks')}</h3>
+              <ol class={`mt-1.5 grid gap-1.5 text-sm ${c.text}`}>
+                {talks.map((k, n) => (
+                  <li class="grid grid-cols-[1.75rem_1fr]">
+                    <span class={c.faint}>{n + 1}.</span>
+                    <span>
+                      <b class={c.strong}>{k.data.host}</b>{k.data.hostKo && <> - {k.data.hostKo}</>} ({k.data.year}),{' '}
+                      <span set:html={rich(k.data.title)} />{k.data.titleKo && <> - {k.data.titleKo}</>}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+        </div>
+      </article>
+    </div>
+    </section>
+    );
+  })}
+</Base>

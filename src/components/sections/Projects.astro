@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import SectionHeading from '../SectionHeading.astro';
+import { t } from '../../i18n/ui';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="projects" class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
+  <SectionHeading title={t('projects.title')} />
+  <div class="reveal mt-6 overflow-x-auto rounded-2xl border border-line bg-white shadow-sm">
+    <table class="w-full min-w-[48rem] text-left text-sm">
+      <thead class="bg-brand-navy text-white">
+        <tr>
+          <th scope="col" class="w-[6.5rem] py-3 pr-2 pl-4 font-semibold">{t('projects.period')}</th>
+          <th scope="col" class="px-4 py-3 font-semibold">{t('projects.name')}</th>
+          <th scope="col" class="w-60 px-4 py-3 font-semibold">{t('projects.agency')}</th>
+          <th scope="col" class="w-40 px-4 py-3 text-right font-semibold">{t('projects.budget')}</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-line">
+        {projects.map((p) => (
+          <tr class="align-top transition hover:bg-card">
+            <td class="py-3.5 pr-2 pl-4 text-xs leading-relaxed text-muted tabular-nums">
+              {p.data.period.split(' - ').map((d, i) => <span class="block">{d}{i === 0 && p.data.period.includes(' - ') ? ' ~' : ''}</span>)}
+            </td>
+            <td class="px-4 py-3.5">
+              <p class="font-semibold leading-snug">
+                {p.data.title} <span lang="ko" class="text-xs font-normal text-muted">- {p.data.titleKo}</span>
+              </p>
+            </td>
+            <td class="px-4 py-3.5 text-muted">
+              <p>{p.data.agency} <span lang="ko" class="text-xs text-faint">- {p.data.agencyKo}</span></p>
+            </td>
+            <td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap text-brand-navy">{p.data.budget.replace(" (in kind)", "").trim()}{p.data.budget.includes("(in kind)") && <span class="block text-xs font-medium text-muted">(in kind)</span>}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>

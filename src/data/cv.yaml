@@ -1,0 +1,109 @@
+# PI curriculum vitae for /members/seungho-han/.
+# Source: Notion page "Seungho Han" under Member-P.I. (200f9b28fd3e80eebb44c7489e3bee34), 2026-10-25.
+# Each section has groups; a group has a title, an optional period, lines and optional media.
+# A line is plain text with **bold** / __underline__ markup, or { text, icon } where icon is a
+# file in public/media/cv/ shown before the text (the Hanyang and KAIST icons of the Notion page).
+# media: { kind: image | video | youtube, src, alt, size: tiny | logo | small | wide }. Images and videos live in public/media/cv/.
+# Invited talks are not repeated here; the page reads them from talks.yaml (shown inside "Academic Experiences").
+- id: experience
+  order: 1
+  title: Research Experiences & Educational Background
+  groups:
+    - title: Assistant Professor
+      period: 09/2025 - Current
+      lines:
+        - { icon: hanyang, text: "School of Electrical Engineering, Department of Mechanical Engineering (joint appointment), Hanyang University" }
+    - title: Staff Engineer
+      period: 09/2024 - 08/2025
+      lines:
+        - 책임연구원-과장, 삼성전자 생산(설비)기술연구소 AI로봇기술그룹
+        - AI Robotics Research, A-FAB Team, Samsung Electronics, Hwaseong
+      media:
+        - { kind: image, src: samsung, alt: Samsung Electronics, size: tiny }
+    - title: Ph.D.
+      period: 08/2021 - 08/2024
+      lines:
+        - "Mechanical Engineering (Advisor: Prof. Kyung-Soo Kim)"
+        - { icon: kaist, text: "Korea Advanced Institute of Science and Technology (KAIST), Daejeon" }
+    - title: Research Associate
+      period: 02/2021 - 08/2021
+      lines:
+        - 위촉연구원, 카이스트 MSC연구실
+        - { icon: kaist, text: "Mechatronics, Systems and Control (MSC) Lab, KAIST, Daejeon" }
+    - title: M.S.
+      period: 02/2019 - 02/2021
+      lines:
+        - "Mechanical Engineering (Advisor: Prof. Kyung-Soo Kim)"
+        - { icon: kaist, text: "Korea Advanced Institute of Science and Technology (KAIST), Daejeon" }
+    - title: B.S.
+      period: 03/2013 - 02/2019
+      lines:
+        - Mechanical Engineering
+        - { icon: hanyang, text: "Hanyang University, Seoul (Summa Cum Laude; 최우등졸업)" }
+- id: academic
+  order: 2
+  title: Academic Experiences
+  groups:
+    - title: Invited Reviewer
+      columns: true
+      lines:
+        - International Journal of Control, Automation, and Systems (**IJCAS**)
+        - International Journal of Automotive Technology (**IJAT**)
+        - IEEE Transactions on Instrumentation and Measurement (**IEEE TIM**)
+        - IEEE Transactions on Vehicular Technology (**IEEE TVT**)
+        - IEEE Transactions on Automation Science and Engineering (**IEEE TASE**)
+        - IEEE Transactions on Mechatronics (**IEEE TMECH**)
+        - IEEE Transactions on Intelligent Transportation Systems (**IEEE TITS**)
+        - IEEE Transactions on Control Systems Technology (**IEEE TCST**)
+        - IEEE Robotics and Automation Letters (**IEEE RA-L**)
+        - IEEE International Conference on Intelligent Robots and Systems (**IEEE IROS**)
+        - IEEE American Control Conference (**IEEE ACC**)
+        - Nonlinear Dynamics
+        - International Journal of Intelligent Robotics and Applications
+        - International Journal of Machine Learning and Cybernetics
+    - title: Research Association (부문/연구회)
+      lines:
+        - "제어로봇시스템학회 (ICROS, Institute of Control, Robotics and Systems), **자동차제어 연구회** (Technical Committee on Automotive Control), 2025 - Current"
+        - "한국자동차공학회 (KSAE, Korean Society of Automotive Engineers), **자율주행전장 부문**, 2026 - Current"
+    - title: Academic Service
+      lines:
+        - "**Technical Committee**, Asian Control Conference (ASCC), 2026"
+        - "**Organizing Committee**, 제어로봇시스템학회 학술대회 (ICROS, Institute of Control, Robotics and Systems), 2026"
+        - "**Co-Organizer**, Special Session \"Recent Advances in Planning and Control for Autonomous Driving\", Asian Control Conference (ASCC), 2026"
+- id: life
+  order: 3
+  title: Life Experiences
+  groups:
+    - title: Military Service
+      period: 04/2014 - 12/2015
+      lines:
+        - Served as a **Sergeant** (completed)
+    - title: RACE
+      period: 02/2016 - 07/2017
+      lines:
+        - Student Society, 레이스 동아리, Hanyang University, Seoul
+      media:
+        - { kind: image, src: race, alt: RACE student society logo, size: logo }
+    - title: Cross Country Cycling
+      period: 2013, 2018
+      lines:
+        - 싸이클 국토종주, **Incheon ~ Busan, 630 km / 4 days**, Team Leader
+      media:
+        - { kind: image, src: cycling, alt: Cross country cycling, size: small }
+- id: lectures
+  order: 4
+  title: Lectures
+  groups:
+    - title: Graduate Courses
+      lines:
+        - (Spring) **Optimal Control and Reinforcement Learning-Based Control for Autonomous Robots and Driving**
+      media:
+        - { kind: video, src: lecture_spider, alt: "Spider 30 (Diden Robotics)", size: wide }
+    - title: Undergraduate Courses
+      lines:
+        - (Spring) **Robotics (w/ Canon Korea)**
+        - (Spring) **Control Systems Modeling**
+        - (Fall) Robot Vision and AI
+        - (Fall) **Linear Algebra**
+      media:
+        - { kind: youtube, src: OMuBDbv4mT8, alt: "Robotics (w/ Canon Korea) course video", size: wide }

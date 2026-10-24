@@ -1,0 +1,27 @@
+# Awards, newest first. Source: Notion Awards DB (39ef9b28fd3e80df92c4c6d3025b1c42).
+# image: file name in public/media/awards/ (WebP, the first photo on the Notion page).
+- id: iros-2025-wlr
+  order: 1
+  year: 2025
+  title: "**Winner**, International Robotics Competition at the **IEEE IROS** 2025 Workshop (Wheeled-Legged Robot Category)"
+  titleKo: IEEE IROS 2025 워크숍 국제 로보틱스 대회 우승 (휠-족형 로봇)
+  image: iros
+  imagePos: center 35%
+- id: gyeonggi-ad-2026
+  order: 2
+  year: 2026
+  title: "**Encouragement Award**, 2026 **Gyeonggi-do** Autonomous Driving Competition"
+  titleKo: 2026 경기도 자율주행 경진대회 장려상
+  image: gyeonggi
+- id: icros-2026-young
+  order: 3
+  year: 2026
+  title: Outstanding Young Researcher Award, 41st ICROS Annual Conference (ICROS 2026)
+  titleKo: 제41회 제어로봇시스템학회 학술대회 (ICROS 2026) 우수신진연구자상
+  image: icros
+- id: ikeee-2026-paper
+  order: 4
+  year: 2026
+  title: Award for Outstanding Paper, 2026 IKEEE Summer Conference
+  titleKo: 2026 한국전기전자학회 하계학술대회 우수논문상
+  image: ikeee

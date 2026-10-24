@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import SectionHeading from '../SectionHeading.astro';
+import { links, t } from '../../i18n/ui';
+
+const all = (await getCollection('members')).sort((a, b) => a.data.order - b.data.order);
+const pi = all.find((m) => m.data.role === 'pi')!.data;
+const current = all.filter((m) => m.data.role !== 'pi' && m.data.role !== 'alumni');
+const alumni = all.filter((m) => m.data.role === 'alumni');
+// Course badge color by role.
+const roleStyle: Record<string, string> = {
+  phd: 'bg-amber-400/15 text-amber-300 ring-amber-300/30',
+  ms: 'bg-teal/15 text-teal ring-teal/40',
+  undergrad: 'bg-accent-soft/15 text-accent-soft ring-accent-soft/30',
+};
+const initials = (name: string) => name.split(' ').map((w) => w[0]).join('').slice(0, 2);
+// Korean name is shown only when it differs from the English one.
+const ko = (m: (typeof all)[number]) => (m.data.name.ko !== m.data.name.en ? m.data.name.ko : '');
+---
+
+<section id="members" class="section-dark">
+  <div class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
+    <SectionHeading title={t('members.title')} />
+
+    <h3 class="bar mt-6">{t('members.pi')}</h3>
+    <div class="mt-4 grid grid-cols-3 gap-2 sm:gap-4 lg:grid-cols-5">
+      <article class="reveal group block-dark overflow-hidden">
+        <div class="aspect-[8/5] overflow-hidden bg-white">
+          <img src={`/media/people/${pi.photo}.webp`} alt={pi.name.en} width="480" height="584" loading="lazy" class="h-full w-full object-cover object-[center_15%] transition duration-500 group-hover:scale-105" />
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 p-2 sm:p-3">
+          <p class="text-sm font-bold sm:text-base">{pi.name.en}</p>
+          <a href={links.cv} class="shrink-0 rounded-md bg-white px-2.5 py-1 text-xs font-semibold text-brand-black transition hover:bg-accent-soft hover:text-white">{t('members.seeMore')} →</a>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="bar mt-8">{t('members.current')}</h3>
+    <ul class="mt-4 grid grid-cols-3 gap-2 sm:gap-4 lg:grid-cols-6">
+      {current.map((m, i) => (
+        <li class="reveal group block-dark overflow-hidden transition hover:-translate-y-1 hover:border-white/25" style={`transition-delay:${(i % 6) * 60}ms`}>
+          <div class="aspect-[8/5] overflow-hidden bg-gradient-to-br from-[#1f3a68] via-[#002060] to-[#191919]">
+            {m.data.photo ? (
+              <img src={`/media/people/${m.data.photo}.webp`} alt={m.data.name.en} width="480" height="600" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" style={`object-position:${m.data.photoPos}`} />
+            ) : (
+              <div class="grid h-full place-items-center text-2xl font-extrabold text-white/30 sm:text-4xl">{initials(m.data.name.en)}</div>
+            )}
+          </div>
+          <div class="p-2 sm:p-3">
+            <p class="text-sm font-bold sm:text-base">{m.data.name.en} {ko(m) && <span lang="ko" class="text-xs font-medium text-white/65">{ko(m)}</span>}</p>
+            <p class={`mt-1.5 inline-block rounded-full px-1.5 py-0.5 text-[0.6rem] font-semibold ring-1 sm:px-2 sm:text-[0.7rem] ${roleStyle[m.data.role] ?? roleStyle.undergrad}`}>{m.data.course.en}</p>
+            {m.data.topics.length > 0 && <p class="mt-2 text-[0.65rem] leading-snug text-white/60 sm:text-xs">{m.data.topics.join(', ')}</p>}
+            {m.data.email && <a href={`mailto:${m.data.email}`} class="mt-2 block truncate text-[0.65rem] text-white/60 hover:text-white sm:text-xs">{m.data.email}</a>}
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    {alumni.length > 0 && (
+      <>
+        <h3 class="bar mt-8">{t('members.alumni')}</h3>
+        <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {alumni.map((m) => (
+            <li class="reveal block-dark flex items-center gap-4 p-4">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-brand-navy text-sm font-bold text-white/80">{initials(m.data.name.en)}</span>
+              <div class="min-w-0">
+                <p class="font-semibold">{m.data.name.en} {ko(m) && <span lang="ko" class="text-xs font-medium text-white/65">{ko(m)}</span>}</p>
+                <p class="text-xs text-white/60">{m.data.course.en}{m.data.note && `, ${m.data.note}`}</p>
+                {m.data.topics.length > 0 && <p class="text-xs text-white/60">{m.data.topics.join(', ')}</p>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+  </div>
+</section>

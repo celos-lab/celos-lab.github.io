@@ -1,0 +1,65 @@
+# Lab news, newest first. Source: Notion Lab News DB (dates are Notion created dates).
+# Wrap key words in **double asterisks**; they are shown in bold blue in the news table.
+# titleKo (optional) is shown under the English line, only where Korean adds information.
+- id: 2026-08-nrf-core
+  date: 2026-08-25
+  tag: Achievement
+  title: Selected for the **NRF Core Research Program (Basic Research B)**, Ministry of Science and ICT
+  titleKo: 과학기술정보통신부 개인기초연구사업 **우수연구 핵심연구(기본B)** 선정
+- id: 2026-08-kiee-award
+  date: 2026-08-22
+  tag: Achievement
+  title: "[**KIEE**] **Award for outstanding paper** (Doyoon Lee)"
+  titleKo: "[**대한전기학회**] **우수논문상** 수상 (이도윤)"
+- id: 2026-07-umich-seminar
+  date: 2026-07-22
+  tag: Visit
+  title: "[**Univ. of Michigan**] Prof. Jaerock Kwon's seminar: **DeepDual2Drive**"
+- id: 2026-07-cau-seminar
+  date: 2026-07-22
+  tag: Visit
+  title: "[**Chung-Ang Univ.**] Prof. Hyung Tae Choi's seminar: **Nonlinear L1 control**"
+- id: 2026-02-gyeonggi-ad
+  date: 2026-02-13
+  tag: Achievement
+  title: CELOS Lab students received the **Encouragement Award** at the **2026 Gyeonggi University Autonomous Driving Competition**
+  titleKo: "**2026 경기도 대학생 자율주행 경진대회** **장려상** 수상"
+- id: 2026-01-nvidia-seminar
+  date: 2026-01-08
+  tag: Visit
+  title: "[**NVIDIA**] Dr. Byung-Kwan Lee delivers a seminar at CELOS"
+- id: 2025-12-kaist-seminar
+  date: 2025-12-16
+  tag: Visit
+  title: "[**KAIST**] Dr. Byungkwan Jang delivers a seminar at CELOS"
+- id: 2025-12-kimm-seminar
+  date: 2025-12-16
+  tag: Visit
+  title: "[**KIMM**] Dr. Minyoung Lee delivers a seminar at CELOS"
+- id: 2025-12-apple-seminar
+  date: 2025-12-02
+  tag: Visit
+  title: "[**Apple**] Mr. Eunkyo Seo delivers a seminar at CELOS"
+- id: 2025-12-pranav-joined
+  date: 2025-12-02
+  tag: New
+  title: "[**IIT**] Pranav Vishal Deshmukh has **joined CELOS**"
+- id: 2025-11-iros-wlr
+  date: 2025-11-25
+  tag: Achievement
+  title: CELOS Lab **wins the wheel-legged robot workshop competition** at **IROS 2025**
+  titleKo: "**IROS 2025** **휠-족형 로봇 워크숍 대회 우승**"
+- id: 2025-11-scholarship
+  date: 2025-11-25
+  tag: Achievement
+  title: Doyoon Lee has been selected as a **scholarship recipient** (Hanyang Electronics, Information and Communication Alumni Scholarship)
+  titleKo: 이도윤, **한양전자정보통신동문장학** 장학생 선정
+- id: 2025-10-imperial-seminar
+  date: 2025-10-22
+  tag: Visit
+  title: "[**Imperial College London**] Dr. Younggeol Cho delivers a seminar at CELOS"
+- id: 2025-09-launch
+  date: 2025-09-01
+  tag: Birth
+  title: "**CELOS Lab** officially launched at Hanyang University"
+  titleKo: 한양대학교 **CELOS 연구실** 개소

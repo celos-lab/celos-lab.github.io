@@ -1,0 +1,22 @@
+---
+import { joinForm, t } from '../../i18n/ui';
+import { rich } from '../../lib/emph';
+---
+
+<section id="join" class="section-dark">
+  <div class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
+    <div class="reveal card-b rich relative overflow-hidden rounded-3xl px-8 py-8 shadow-2xl shadow-black/50 sm:px-16">
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(500px_circle_at_90%_10%,rgb(91_139_224/0.35),transparent_60%)]"></div>
+      <div class="relative max-w-3xl">
+        <p class="label">{t('join.label')}</p>
+        <h2 class="mt-2 text-3xl font-extrabold leading-tight tracking-tight sm:text-3xl">{t('join.title')}</h2>
+        <p lang="ko" class="mt-4 text-white/80" set:html={`■ ${rich(t('join.bodyKo'))}`} />
+        <p class="mt-2 text-white/80" set:html={`■ ${rich(t('join.body'))}`} />
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href={joinForm.ko} lang="ko" class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-brand-black transition hover:bg-accent-soft hover:text-white">{t('join.cta.ko')} →</a>
+          <a href={joinForm.en} class="rounded-md border border-white/40 px-6 py-3 text-sm font-semibold transition hover:bg-white/10">{t('join.cta.en')} →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

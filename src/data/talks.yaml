@@ -1,0 +1,76 @@
+# Invited seminars and workshops, newest first. Source: Notion CELOS Lab > Activities (Korean and English as on the Notion page).
+# Markup: **bold** (see src/lib/emph.ts). titleKo is optional.
+- id: ksae-2026
+  order: 1
+  year: 2026
+  host: Korean Society of Automotive Engineers (KSAE)
+  hostKo: 한국자동차공학회
+  title: 2026 Spring Conference, **Outstanding Early-Career Researcher** session
+  titleKo: 2026 춘계, 신진과학자세션 발표
+- id: icros-2026-session
+  order: 2
+  year: 2026
+  host: Institute of Control, Robotics and Systems (ICROS)
+  hostKo: 제어로봇시스템학회
+  title: "2026, **Outstanding Early-Career Researcher** session"
+  titleKo: 2026 우수신진연구자세션 발표
+- id: ascc-2026
+  order: 3
+  year: 2026
+  host: ASCC 2026
+  title: Special Session
+- id: kwangwoon-2026
+  order: 4
+  year: 2026
+  host: Kwangwoon University
+  hostKo: 광운대학교
+  title: Wheel-torque distribution strategy for formation control of mobile robot
+  titleKo: 모바일로봇 군집제어를 위한 휠-토크 분배 전략
+- id: icros-ws-2026
+  order: 5
+  year: 2026
+  host: ICROS Workshop
+  hostKo: 제어로봇시스템학회 워크숍
+  title: Integration of reinforcement learning and stochastic MPC and its application to wheel-legged robot control
+  titleKo: 강화학습 및 Stochastic MPC 융합방법론과 이를 이용한 wheel-legged robot 제어
+- id: roscon-2026
+  order: 6
+  year: 2026
+  host: ROSCon
+  title: High-speed autonomous navigation of a wheel-legged robot using reinforcement learning
+  titleKo: 강화학습을 이용한 wheel-legged robot (휠-다리 로봇)의 고속 자율주행 구현
+- id: kiisc-2025
+  order: 7
+  year: 2025
+  host: Korea Institute of Information Security and Cryptology (KIISC)
+  hostKo: 한국정보보호학회
+  title: Communication-delay compensation for connected autonomous driving and RL-based adversarial manipulation of sensor data
+  titleKo: 커넥티드 자율주행 통신 지연 보상 기법 및 센서 데이터의 강화학습 기반 악의적 조작
+- id: korea-2024
+  order: 8
+  year: 2024
+  host: Korea University
+  hostKo: 고려대학교
+  title: LiDAR-radar fusion for robust multi-object tracking
+  titleKo: 라이다-레이다 퓨전을 이용한 강인한 다중객체 추적
+- id: cnu-2024-nmpc
+  order: 9
+  year: 2024
+  host: Chungnam National University
+  hostKo: 충남대학교
+  title: Fundamentals of nonlinear MPC and its application on autonomous driving
+  titleKo: 비선형 MPC 기초 및 이를 응용한 자율주행
+- id: cnu-2024-lmpc
+  order: 10
+  year: 2024
+  host: Chungnam National University
+  hostKo: 충남대학교
+  title: Fundamentals of linear MPC
+  titleKo: 선형 MPC 기초
+- id: kyonggi-2024
+  order: 11
+  year: 2024
+  host: Kyonggi University
+  hostKo: 경기대학교
+  title: Fundamentals of linear MPC
+  titleKo: 선형 MPC 기초

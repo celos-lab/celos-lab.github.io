@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+/*
+ * Brand colors (set by the PI, 2026-10-24): black #191919, navy #002060.
+ * Secondary blues come from the CELOS design guide (design.md, style A).
+ * Layout language follows the Gatsby Holo theme: gradient cards alternating with
+ * solid navy cards and huge gradient headings, on brand-black dark sections.
+ */
+@theme {
+  --color-brand-navy: #002060;
+  --color-brand-black: #191919;
+  --color-navy-950: #000f2e;
+  --color-navy-900: #001640;
+  --color-navy-800: #002060;
+  --color-navy-700: #0b2a5b;
+  --color-accent: #3d6fd1;
+  --color-accent-soft: #5b8be0;
+  --color-accent-deep: #1f4aa0;
+  --color-teal: #1fa89a;
+  --color-celos-red: #9b2c2c;
+  --color-ink: #191919;
+  --color-muted: #55606e;
+  --color-faint: #6b778a;
+  --color-paper: #eef1f7;
+  --color-card: #f7f9fd;
+  --color-line: #d6deec;
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  @apply bg-paper text-ink font-sans;
+  word-break: keep-all;
+}
+
+/* Small uppercase label above a section heading. */
+.label {
+  @apply text-sm font-semibold uppercase tracking-[0.12em] text-brand-black sm:text-base;
+}
+
+/* Huge gradient heading, Holo style. */
+.display {
+  @apply text-3xl font-extrabold leading-[1.05] tracking-tight lg:text-4xl;
+  background: linear-gradient(100deg, var(--color-brand-navy) 0%, var(--color-accent) 55%, var(--color-accent-soft) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Inline markup from the data files (lib/emph.ts): bold and underline, as on the Notion page. */
+.rich b {
+  @apply font-bold;
+}
+.rich u {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.rich-blue b {
+  @apply text-accent-deep;
+}
+.section-dark .rich-blue b {
+  @apply text-accent-soft;
+}
+
+/* Dark sections use the brand black (#191919). */
+.section-dark {
+  @apply bg-brand-black text-white;
+}
+/* Slightly lighter dark section, to separate Research from the hero above. */
+.section-lift {
+  @apply bg-[#262626];
+}
+.section-lift .block-dark {
+  @apply bg-[#303030];
+}
+.section-dark .label {
+  @apply text-white/60;
+}
+.section-dark .display {
+  background-image: linear-gradient(100deg, #ffffff 0%, #b9cdf5 45%, var(--color-accent-soft) 100%);
+}
+/* Raised block on a dark section, like the Notion page blocks. */
+.block-dark {
+  @apply rounded-2xl border border-white/10 bg-[#232323] shadow-2xl shadow-black/40;
+}
+/* Navy title bar inside a dark block. */
+.bar {
+  @apply rounded-lg bg-brand-navy px-4 py-2 text-xl font-extrabold italic text-white;
+}
+
+/* Gradient card (card A) and solid navy card (card B). */
+.card-a {
+  background: linear-gradient(115deg, #8fb0ee 0%, var(--color-accent-soft) 35%, var(--color-accent-deep) 100%);
+  @apply text-white;
+}
+.card-a-dark {
+  background: linear-gradient(115deg, #1f4595 0%, #163a82 45%, var(--color-brand-navy) 100%);
+  @apply text-white;
+}
+.card-b {
+  @apply bg-brand-navy text-white;
+}
+
+/* Keyboard focus. */
+:focus-visible {
+  outline: 2px solid var(--color-accent-soft);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Long lists: rows marked .extra stay hidden until the wrapper gets data-open. */
+[data-collapsible]:not([data-open]) .extra {
+  display: none;
+}
+
+/*
+ * Scroll reveal: blocks fade up as they enter the viewport (Base.astro adds .is-visible).
+ * Only active when JavaScript runs (the `js` class on <html>), so content never stays hidden.
+ * The PI asked for these to run regardless of the OS "reduce motion" setting (2026-10-25);
+ * they are short and have no parallax.
+ */
+.js .reveal {
+  opacity: 0;
+  translate: 0 24px;
+  transition: opacity 0.7s ease, translate 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Section heading: the title wipes in from the left, then an accent bar grows under it. */
+.heading .display {
+  padding-bottom: 0.1em;
+}
+.js .heading .display {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s;
+}
+.js .heading.is-visible .display {
+  clip-path: inset(0 0 0 0);
+}
+.heading-bar {
+  display: block;
+  width: 3.5rem;
+  height: 4px;
+  margin-top: 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--color-brand-navy), var(--color-accent-soft));
+}
+.section-dark .heading-bar {
+  background: linear-gradient(90deg, #ffffff, var(--color-accent-soft));
+}
+.js .heading-bar {
+  width: 0;
+  transition: width 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.45s;
+}
+.js .heading.is-visible .heading-bar {
+  width: 3.5rem;
+}
+
+/* Reading progress line along the bottom edge of the header. */
+#progress {
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

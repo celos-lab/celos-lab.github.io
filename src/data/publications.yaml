@@ -1,0 +1,326 @@
+# Publications, newest first within each group.
+# Source: Notion Publications page (1fff9b28fd3e8153a8f4d0343946da3c), 2026-10-24.
+# group: international | domestic | ip
+# kind: journal | conference | patent | transfer
+# jcr: shown as a badge; q1 drives the "Q1 journal papers" stat.
+
+# --- International ---------------------------------------------------------
+- id: choi2026radar-slam
+  order: 1
+  group: international
+  kind: journal
+  year: 2026
+  authors: Choi, M., Kang, J., & Han, S.
+  title: 4-D Radar-Camera Vector Map SLAM With Dynamic Object Removal Mask and Two-Stage Loop Detection
+  venue: IEEE Transactions on Instrumentation & Measurement (T-IM)
+  jcr: Q1, JCR Rank 5.6%
+  q1: true
+- id: choi2026ra-aeb
+  order: 2
+  group: international
+  kind: journal
+  year: 2026
+  status: Accepted
+  authors: Choi, M., & Han, S.
+  title: "RA-AEB: Risk-Aware Autonomous Emergency Braking for Collision Avoidance via a Risk Assessment Map"
+  venue: International Journal of Control, Automation and Systems (IJCAS)
+  jcr: Q2, JCR Rank 38.8%
+- id: lee2026evolution
+  order: 3
+  group: international
+  kind: conference
+  year: 2026
+  status: Accepted
+  authors: Lee, Y.-J., Kim, S., Kang, M., Chuen, A. C. L., Chen, Z., Han, S., Jung, T., & Kang, D.
+  title: "Evolution Fine-Tuning: Learning to Discover Across 371 Optimization Tasks"
+  venue: Advances in Neural Information Processing Systems (NeurIPS 2026)
+- id: jang2026battery
+  order: 4
+  group: international
+  kind: conference
+  year: 2026
+  authors: Jang, B., Seo, H., Han, S., Kim, W., & Kim, K.-S.
+  title: Mechanism of Post-Charge Self-Balancing in Parallel Battery Systems
+  venue: IFAC World Congress
+- id: han2026drl-ampc
+  order: 5
+  group: international
+  kind: conference
+  year: 2026
+  authors: Han, S., Kang, J., Deshmukh, P. V., Lee, D., & Bangunharcana, A.
+  title: Deep Reinforcement Learning-Based Adaptive Model Predictive Control for Autonomous Vehicle Path Tracking
+  venue: 15th Asian Control Conference (ASCC 2026)
+  details: pp. 2321-2326
+- id: bangunharcana2026grpo
+  order: 6
+  group: international
+  kind: conference
+  year: 2026
+  authors: Bangunharcana, A., Lee, S., & Han, S.
+  title: Bridging Reactive Simulation and Log-Playback for Safer Autonomous Driving with GRPO
+  venue: 15th Asian Control Conference (ASCC 2026)
+  details: pp. 2333-2338
+- id: han2026superquadric
+  order: 7
+  group: international
+  kind: journal
+  year: 2026
+  authors: Han, S., Yang, S., & Choi, M.
+  title: Fast Superquadric Potential Function for Collision Avoidance of Autonomous Vehicle
+  venue: IEEE Access
+  details: vol. 14, pp. 6635-6646
+  jcr: Q2, JCR Rank 33.5%
+- id: kang2025gait
+  order: 8
+  group: international
+  kind: conference
+  year: 2025
+  authors: Kang, J., Ham, B. I., Han, S., Kim, H., & Kim, K.-S.
+  title: Adaptive Gait Pattern Switching under External Disturbances Using Multi-Modal MPC
+  venue: 34th IEEE International Conference on Robot and Human Interactive Communication (RO-MAN 2025)
+  details: pp. 134-140
+- id: han2025adaptive-roi
+  order: 9
+  group: international
+  kind: journal
+  year: 2025
+  authors: Han, S., Choi, M., Jang, B., Choi, K. H., & Kim, K.-S.
+  title: Adaptive ROI for Collision Warning Mitigation Based on Road Geometry and Kinematics
+  venue: IEEE Sensors Journal
+  jcr: Q1, JCR Rank 19.6%
+  q1: true
+- id: han2024safety-distance
+  order: 10
+  group: international
+  kind: journal
+  year: 2024
+  authors: Han, S., Choi, K. H., & Kim, K.-S.
+  title: Adaptive Safety Distance for Collision Avoidance Based on a Full Braking Activation Parameter
+  venue: IEEE Transactions on Intelligent Transportation Systems (T-ITS)
+  jcr: Q1, JCR Rank 2.4%
+  q1: true
+- id: han2024position-uncertainty
+  order: 11
+  group: international
+  kind: journal
+  year: 2024
+  authors: Han, S., Kwon, J., & Kim, K.-S.
+  title: Position Uncertainty-Integrated Potential Function for Collision Avoidance Systems Based on Model Predictive Control
+  venue: IEEE Transactions on Intelligent Vehicles (T-IV)
+  jcr: Q1, JCR Rank 1.8%
+  q1: true
+- id: han2024formation-iros
+  order: 12
+  group: international
+  kind: conference
+  year: 2024
+  authors: Han, S., Yang, S., Lee, Y., Lee, M., Park, J. I., & Kim, K.-S.
+  title: The Leader-Follower Formation Control of Nonholonomic Vehicle With Follower-Stabilizing Strategy
+  venue: 40th Anniversary of the IEEE Conference on Robotics and Automation (IROS w/ RA-L)
+- id: han2023formation-ral
+  order: 13
+  group: international
+  kind: journal
+  year: 2023
+  authors: Han, S., Yang, S., Lee, Y., Lee, M., Park, J. I., & Kim, K.-S.
+  title: The Leader-Follower Formation Control of Nonholonomic Vehicle With Follower-Stabilizing Strategy
+  venue: IEEE Robotics and Automation Letters (RA-L)
+  details: vol. 9, no. 1, pp. 707-714
+  jcr: Q1, JCR Rank 19.8%
+  q1: true
+- id: han2023formation-ijcas
+  order: 14
+  group: international
+  kind: journal
+  year: 2023
+  authors: Han, S., Choi, M., Cho, M., Park, J. I., & Kim, K.-S.
+  title: Dynamic Control and Simulation of Leader-Follower Vehicle Formation Considering Vehicle Stability
+  venue: International Journal of Control, Automation and Systems (IJCAS)
+  details: vol. 21, no. 9, pp. 2995-3005
+  jcr: Q2, JCR Rank 38.8%
+- id: choi2023msc-rad4r
+  order: 15
+  group: international
+  kind: journal
+  year: 2023
+  authors: Choi, M., Yang, S., Han, S., Lee, Y., Lee, M., Choi, K. H., & Kim, K.-S.
+  title: "MSC-RAD4R: ROS-Based Automotive Dataset With 4D Radar"
+  venue: IEEE Robotics and Automation Letters (RA-L)
+  details: vol. 8, no. 11, pp. 7194-7201
+  jcr: Q1, JCR Rank 19.8%
+  q1: true
+- id: yang2023radar-camera
+  order: 16
+  group: international
+  kind: journal
+  year: 2023
+  authors: Yang, S., Choi, M., Han, S., Choi, K. H., & Kim, K.-S.
+  title: 4D Radar-Camera Sensor Fusion for Robust Vehicle Pose Estimation in Foggy Environments
+  venue: IEEE Access
+  details: vol. 12, pp. 16178-16188
+  jcr: Q2, JCR Rank 35.9%
+- id: jang2022dob
+  order: 17
+  group: international
+  kind: conference
+  year: 2022
+  authors: Jang, B., Han, S., Kim, Y., & Kim, K.-S.
+  title: Disturbance Observer-Based Robust Speed Control of Autonomous In-Wheel Driven Electric Vehicle
+  venue: 13th Asian Control Conference (ASCC 2022)
+  details: pp. 744-749
+- id: park2022platform
+  order: 18
+  group: international
+  kind: conference
+  year: 2022
+  authors: Park, J. I., Choi, M., Han, S., Lee, Y., Cho, J., Choi, H., & Kim, K.-S.
+  title: Development of ROS-Based Small Unmanned Platform for Acquiring Autonomous Driving Dataset in Various Places and Weather Conditions
+  venue: IEEE 46th Annual Computers, Software, and Applications Conference (COMPSAC 2022)
+  details: pp. 24-31
+- id: ko2020path
+  order: 19
+  group: international
+  kind: conference
+  year: 2020
+  authors: Ko, C., Han, S., Choi, M., & Kim, K.-S.
+  title: Integrated Path Planning and Tracking Control of Autonomous Vehicle for Collision Avoidance Based on Model Predictive Control and Potential Field
+  venue: 20th International Conference on Control, Automation and Systems (ICCAS 2020)
+  details: pp. 956-961
+
+# --- Domestic --------------------------------------------------------------
+- id: lee2026vr-teleop
+  order: 20
+  group: domestic
+  kind: conference
+  year: 2026
+  authors: Lee, D., Ko, H., Yeon, J., & Han, S.
+  title: VR 핸드 트래킹 기반 휴머노이드 원격조종의 지연 구간 분석과 저역통과필터 계수 조절을 통한 지연-안정성 균형
+  venue: Institute of Korean Electrical and Electronics Engineers (IKEEE), Summer Conference
+  award: Excellent Paper Award, Bronze
+- id: jang2026steering
+  order: 21
+  group: domestic
+  kind: conference
+  year: 2026
+  authors: Jang, B., Han, S., & Kim, K.-S.
+  title: Design of a Steering System Controller for Autonomous Vehicle
+  venue: Institute of Control, Robotics and Systems (ICROS)
+- id: cho2026cvar
+  order: 22
+  group: domestic
+  kind: conference
+  year: 2026
+  authors: Cho, M., & Han, S.
+  title: Risk-Aware Autonomous Braking via CVaR-Based Risk Map
+  venue: Institute of Control, Robotics and Systems (ICROS)
+- id: sung2026segmentation
+  order: 23
+  group: domestic
+  kind: conference
+  year: 2026
+  authors: Sung, M., Yoo, K., Kim, J., Han, S., Yang, S., & Choi, M.
+  title: 도로 노면 의미론적 분할 기법의 소수 클래스 불균형 해소를 위한 원근 변환 기반 데이터 증강 기법
+  venue: ICROS Undergraduate Paper Competition
+- id: lee2026mecanum
+  order: 24
+  group: domestic
+  kind: conference
+  year: 2026
+  authors: Lee, H., Han, U., & Han, S.
+  title: 메카넘휠 기반 이동로봇의 리더-팔로워 군집주행 제어 구현 및 검증
+  venue: ICROS Undergraduate Paper Competition
+- id: lee2026osmnx
+  order: 25
+  group: domestic
+  kind: conference
+  year: 2026
+  authors: Lee, D., & Han, S.
+  title: OSMnx 및 유전 알고리즘 기반 다중 목적지 실시간 경로 최적화 시스템 구현 및 성능 분석
+  venue: ICROS Undergraduate Paper Competition
+- id: woo2026nuplan
+  order: 26
+  group: domestic
+  kind: conference
+  year: 2026
+  authors: Woo, D., Kim, M., Ahn, C., & Han, S.
+  title: nuPlan 실데이터 기반 도시별 주행 성향을 반영한 자율주행 보상 함수
+  venue: ICROS Undergraduate Paper Competition
+- id: lee2026mppi-offroad
+  order: 27
+  group: domestic
+  kind: conference
+  year: 2026
+  authors: Lee, H., Han, U., & Han, S.
+  title: Model Predictive Path Integral-Based Control Implementation for Off-road Autonomous Driving
+  venue: Korean Society of Automotive Engineers (KSAE), Spring Conference, Undergraduate Paper Competition
+- id: han2022gps-imu
+  order: 28
+  group: domestic
+  kind: conference
+  year: 2022
+  authors: Han, S., Yang, S., Lee, Y., Park, J. I., & Kim, K.-S.
+  title: Verification of ROS-based GPS/IMU Integrated Localization Algorithm Using Inter-vehicle Distance Estimation Accuracy
+  venue: Korean Society for Precision Engineering
+  details: pp. 412-416
+- id: han2020snow-removal
+  order: 29
+  group: domestic
+  kind: journal
+  year: 2020
+  authors: Han, S., Song, H.-J., Lee, M.-Y., Cha, M.-H., & Kim, K.-S.
+  title: Path Tracking Algorithm Design for Unmanned Air Force Vehicle for Runway Snow Removal Operation
+  venue: Korean Journal of Military Art and Science
+- id: han2020collision-mpc
+  order: 30
+  group: domestic
+  kind: conference
+  year: 2020
+  authors: Han, S., Ko, C., & Kim, K.-S.
+  title: Development of Collision Avoidance Controller for Autonomous Vehicle based on Potential Field and Model Predictive Control
+  venue: Korean Society for Precision Engineering
+  details: p. 262
+- id: han2020snow-modeling
+  order: 31
+  group: domestic
+  kind: conference
+  year: 2020
+  authors: Han, S., et al.
+  title: Dynamic Modeling of Unmanned Military Vehicle for Runway Snow Removal Operations and Simulation Environment Construction for Driving Performance Evaluation
+  venue: Korean Society of Mechanical Engineers
+  details: pp. 157-159
+- id: han2020snow-trailer
+  order: 32
+  group: domestic
+  kind: conference
+  year: 2020
+  authors: Han, S., et al.
+  title: Simulation Verification of Unmanned Military Trailers for Runway Snow Removal Operations
+  venue: Korean Society of Mechanical Engineers
+  details: pp. 160-162
+
+# --- Patents and technology transfer ---------------------------------------
+- id: tt2026fallback
+  order: 33
+  group: ip
+  kind: transfer
+  year: 2026
+  authors: Han, S.
+  title: Manipulator Fallback Algorithms Using Robust Tube-Based Control
+  venue: Technology Transfer (Hanyang Univ.)
+- id: tt2026tube-nn
+  order: 34
+  group: ip
+  kind: transfer
+  year: 2026
+  authors: Han, S.
+  title: Tube Neural Networks for Robust Robot Control and Vibration Suppression
+  venue: Technology Transfer (Hanyang Univ.)
+- id: patent2025aeb
+  order: 35
+  group: ip
+  kind: patent
+  year: 2025
+  authors: Han, S., Choi, K. H., & Kim, K.-S.
+  title: Autonomous Emergency Braking Method for Providing Optimal Safety Distance and System
+  venue: Patent (KAIST)
+  details: 10-2025-0042188

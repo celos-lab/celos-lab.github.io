@@ -1,0 +1,58 @@
+# Ongoing projects. Source: 1_연구실관리\2_연구과제\projects.md (상태=진행, 공개=Y), 2026-10-24.
+# budget: only values already public on the Notion Ongoing Projects table; "-" when not public.
+- id: nrf-core-b
+  order: 1
+  period: 2026.09 - 2031.08
+  title: Core Research Program (Basic Research B), Excellent Research Track
+  titleKo: 개인기초연구사업 우수연구 핵심연구(기본연구B)
+  agency: Ministry of Science and ICT (NRF)
+  agencyKo: 과학기술정보통신부(한국연구재단)
+  budget: 315,000,000
+- id: gpu-wlr
+  order: 2
+  period: 2026.03 - 2026.12
+  title: "(Advanced GPU) Large-scale reinforcement learning-based control of wheel-legged robots for unstructured terrain"
+  titleKo: (첨단 GPU) 비정형 지형 극복을 위한 휠-족형 로봇의 대규모 강화학습 기반 제어
+  agency: National IT Industry Promotion Agency (NIPA)
+  agencyKo: 정보통신산업진흥원
+  budget: 97,961,600 (in kind)
+- id: openlab-2026
+  order: 3
+  period: 2026.01 - 2026.12
+  title: 2026 Regional Industry-Linked University-Company OpenLab Program
+  titleKo: 2026 지역 중점산업 기반 대학기업 연계형 OpenLab 육성지원 사업
+  agency: Gyeonggi Province
+  agencyKo: 경기도청
+  budget: 75,000,000
+- id: hanyang-startup
+  order: 4
+  period: 2025.09 - 2027.02
+  title: Stability-guaranteed embedded AI controllers and RL-based control and pose estimation for rough-terrain autonomous systems
+  titleKo: 안정성이 보장된 임베디드 AI 제어기 설계 및 이를 활용한 강화학습 기반 험지 자율시스템 제어 및 자세추정 알고리즘 설계
+  agency: Hanyang University
+  agencyKo: 한양대학교
+  budget: 40,000,000
+- id: semiconductor-bootcamp
+  order: 5
+  period: "-"
+  title: Advanced Industry Talent Bootcamp (Semiconductor)
+  titleKo: 첨단산업 인재양성 부트캠프 사업 (반도체)
+  agency: Korea Institute for Advancement of Technology (KIAT)
+  agencyKo: 한국산업기술진흥원
+  budget: "-"
+- id: bk21
+  order: 6
+  period: 2020.09 - 2027.08
+  title: BK21 FOUR, Education and Research Group for Intelligent Next-Generation IoT
+  titleKo: BK21 (두뇌한국21), 학연산 기반 지능형 차세대 사물통신 실용인재 양성 교육연구단
+  agency: Ministry of Education (NRF)
+  agencyKo: 교육부(한국연구재단)
+  budget: "-"
+- id: intelligent-robot-cou
+  order: 7
+  period: 2021.05 - 2027.02
+  title: Convergence and Open Sharing System (COSS), Intelligent Robots
+  titleKo: 첨단분야 혁신융합대학사업 (지능형 로봇)
+  agency: Ministry of Education (GBSA)
+  agencyKo: 교육부(경기도경제과학진흥원)
+  budget: "-"

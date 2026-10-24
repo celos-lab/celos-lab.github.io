@@ -1,0 +1,44 @@
+---
+// Invited talks on a dark section. Also used on the PI page with a different title and no preview limit.
+import { getCollection } from 'astro:content';
+import SectionHeading from '../SectionHeading.astro';
+import { t } from '../../i18n/ui';
+import { rich } from '../../lib/emph';
+
+interface Props {
+  title?: string;
+  preview?: number;
+}
+const { title = t('talks.title'), preview = 6 } = Astro.props;
+const talks = (await getCollection('talks')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="talks" class="section-dark">
+  <div class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
+    <SectionHeading title={title} />
+    <div class="reveal block-dark mt-6 px-5 py-2 sm:px-6" data-collapsible>
+      <ol class="rich rich-blue divide-y divide-white/10">
+        {talks.map((k, i) => (
+          <li class={`grid gap-x-5 gap-y-0.5 py-3 sm:grid-cols-[2.5rem_10rem_1fr] ${i >= preview ? 'extra' : ''}`}>
+            <span class="font-mono text-xs leading-6 text-white/50">{k.data.year}</span>
+            <div>
+              <p class="text-[0.8rem] font-semibold leading-snug">
+                {k.data.host}{k.data.hostKo && <span lang="ko" class="text-[0.7rem] font-normal text-white/55"> - {k.data.hostKo}</span>}
+              </p>
+            </div>
+            <div>
+              <p class="text-sm leading-snug text-white/90">
+                <span set:html={rich(k.data.title)} />{k.data.titleKo && <span lang="ko" class="text-white/60"> - {k.data.titleKo}</span>}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      {talks.length > preview && (
+        <button type="button" data-collapse-btn data-less={`${t('pubs.showLess')} ▴`} class="my-3 rounded-md bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20">
+          {t('pubs.showAll')} ({talks.length}) ▾
+        </button>
+      )}
+    </div>
+  </div>
+</section>

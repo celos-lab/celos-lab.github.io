@@ -1,0 +1,15 @@
+---
+// Not-found page. GitHub Pages serves dist/404.html for unknown paths.
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Page not found">
+  <section class="section-dark grid min-h-[70vh] place-items-center px-5 pt-16 text-center">
+    <div>
+      <p class="font-mono text-sm text-white/60">404</p>
+      <h1 class="display mt-2">Page not found</h1>
+      <p class="mt-3 text-white/70">The page you are looking for does not exist or has moved.</p>
+      <a href="/" class="mt-6 inline-block rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-brand-black transition hover:bg-accent-soft hover:text-white">← CELOS Lab home</a>
+    </div>
+  </section>
+</Base>

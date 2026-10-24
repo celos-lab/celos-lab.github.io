@@ -1,0 +1,45 @@
+# Earlier projects of the PI (mostly KAIST MSC Lab era), shown as "etc." under Academic partners.
+# Source: Notion CELOS Lab > Projects database (202f9b28fd3e80d3ab98fbb5b7c1a80a), 2026-10-24.
+# image: file name under public/media/etc/
+- id: indoor-manipulator
+  order: 1
+  title: Robust Indoor Autonomous Mobile Manipulator
+  period: 2024-2025
+  institute: KAIST MSC Lab.
+  overview: Robust indoor autonomous navigation based on sampling-based MPC
+  image: indoor
+- id: military-tractor-trailer
+  order: 2
+  title: Military Autonomous Tractor-Trailer System
+  period: 2019-2022
+  institute: KAIST, Republic of Korea Air Force, KIMM, Treeze Engineering
+  overview: Multi-agent autonomous tractor-trailer system for military snow removal operation
+  image: military
+- id: collision-avoidance
+  order: 3
+  title: Collision Avoidance of Autonomous Vehicle Using Robust Potential Function and Nonlinear MPC
+  period: 2022-2023
+  institute: KAIST
+  overview: Stable and robust collision avoidance based on iLQR control and an uncertainty-integrated potential function
+  image: collision
+- id: radar-adas
+  order: 4
+  title: 3D/4D Radar-based ADAS and Autonomous Driving Systems Integration
+  period: 2022-2024
+  institute: KAIST, FEV, Daedong
+  overview: Integration of ADAS into autonomous driving systems
+  image: radar
+- id: desnowing
+  order: 5
+  title: Desnowing Algorithms Using Camera and LiDAR Fusion
+  period: 2022-2023
+  institute: KAIST, KIMM
+  overview: Camera and LiDAR fusion for real-time desnowing
+  image: desnow
+- id: hw-configurations
+  order: 6
+  title: H/W Configurations for Autonomous Driving and ADAS
+  period: 2020-2024
+  institute: KAIST, FEV
+  overview: Hardware systems for verifying autonomous driving and ADAS algorithms
+  image: hw

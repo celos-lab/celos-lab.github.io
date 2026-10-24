@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://celoslab.github.io',
+  site: 'https://celos-lab.github.io',
   vite: {
     plugins: [tailwindcss()],
   },

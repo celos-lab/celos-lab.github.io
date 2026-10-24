@@ -1,6 +1,6 @@
 # CELOS Lab homepage
 
-Source of https://celoslab.github.io, the homepage of the CELOS Lab (Control, Estimation, and Learning for Optimal Systems) at Hanyang University.
+Source of https://celos-lab.github.io, the homepage of the CELOS Lab (Control, Estimation, and Learning for Optimal Systems) at Hanyang University.
 
 Built with Astro and Tailwind CSS. Pushing to `main` builds the site and deploys it to GitHub Pages (`.github/workflows/deploy.yml`).
 

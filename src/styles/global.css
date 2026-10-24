@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /*
  * Brand colors (set by the PI, 2026-10-24): black #191919, navy #002060.
  * Secondary blues come from the CELOS design guide (design.md, style A).
@@ -22,6 +24,7 @@
   --color-muted: #55606e;
   --color-faint: #6b778a;
   --color-paper: #eef1f7;
+  --color-surface: #ffffff;
   --color-card: #f7f9fd;
   --color-line: #d6deec;
 
@@ -172,6 +175,57 @@ body {
 #progress {
   transform: scaleX(0);
   transform-origin: 0 50%;
+}
+
+/*
+ * Dark mode: the `dark` class on <html>, set by the header toggle and remembered in localStorage.
+ * Light stays the default regardless of the OS setting (PI decision 2026-10-25). Dark sections stay brand black; the light sections (News, Achievements, Projects,
+ * light CV bands) move to a navy-tinted near black so the light/dark alternation remains.
+ */
+.dark {
+  color-scheme: dark;
+  --color-paper: #10141c;
+  --color-surface: #171e2b;
+  --color-card: #1f2838;
+  --color-line: #2a3446;
+  --color-ink: #e8ebf1;
+  --color-muted: #a6afbd;
+  --color-faint: #8691a3;
+}
+.dark .label {
+  @apply text-white/60;
+}
+.dark .display {
+  background-image: linear-gradient(100deg, #ffffff 0%, #b9cdf5 45%, var(--color-accent-soft) 100%);
+}
+.dark .heading-bar {
+  background: linear-gradient(90deg, #ffffff, var(--color-accent-soft));
+}
+.dark .text-brand-navy,
+.dark .text-accent-deep {
+  color: #8fb0ee;
+}
+.dark section:not(.section-dark) .text-brand-black {
+  color: var(--color-ink);
+}
+.dark .bg-accent\/10 {
+  background-color: rgb(61 111 209 / 0.2);
+}
+.dark .bg-slate-200\/70 {
+  background-color: rgb(255 255 255 / 0.1);
+}
+.dark .text-slate-600 {
+  color: var(--color-muted);
+}
+.dark .text-celos-red {
+  color: #f08a8a;
+}
+.dark .bg-celos-red\/10 {
+  background-color: rgb(155 44 44 / 0.3);
+}
+/* Black tiles and buttons need an edge on the near-black background. */
+.dark section:not(.section-dark) .bg-brand-black {
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1);
 }
 
 @media (prefers-reduced-motion: reduce) {

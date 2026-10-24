@@ -80,7 +80,7 @@ const stats = [
   <!-- Small light cards, same size as the etc. cards in Research. -->
   <ul class="rich rich-blue mt-6 grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-6">
     {awards.map((a, i) => (
-      <li class="reveal overflow-hidden rounded-xl border border-line bg-white shadow-sm" style={`transition-delay:${i * 60}ms`}>
+      <li class="reveal overflow-hidden rounded-xl border border-line bg-surface shadow-sm" style={`transition-delay:${i * 60}ms`}>
         {a.data.image && (
           <div class="aspect-[4/3] overflow-hidden bg-card">
             <img src={`/media/awards/${a.data.image}.webp`} alt={a.data.titleKo ?? ''} class="h-full w-full object-cover" style={`object-position:${a.data.imagePos}`} loading="lazy" />

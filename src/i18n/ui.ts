@@ -61,7 +61,6 @@ export const ui = {
   'projects.title': 'Ongoing projects',
   'projects.period': 'Period',
   'projects.name': 'Project name',
-  'projects.agency': 'Funding agency',
   'projects.budget': 'Budget [KRW]',
   'partners.label': 'Academic Partners',
   'partners.domestic': 'Domestic',

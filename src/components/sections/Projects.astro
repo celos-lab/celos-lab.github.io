@@ -9,12 +9,11 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 <section id="projects" class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
   <SectionHeading title={t('projects.title')} />
   <div class="reveal mt-6 overflow-x-auto rounded-2xl border border-line bg-white shadow-sm">
-    <table class="w-full min-w-[48rem] text-left text-sm">
+    <table class="w-full min-w-[40rem] text-left text-sm">
       <thead class="bg-brand-navy text-white">
         <tr>
           <th scope="col" class="w-[6.5rem] py-3 pr-2 pl-4 font-semibold">{t('projects.period')}</th>
           <th scope="col" class="px-4 py-3 font-semibold">{t('projects.name')}</th>
-          <th scope="col" class="w-60 px-4 py-3 font-semibold">{t('projects.agency')}</th>
           <th scope="col" class="w-40 px-4 py-3 text-right font-semibold">{t('projects.budget')}</th>
         </tr>
       </thead>
@@ -27,10 +26,8 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
             <td class="px-4 py-3.5">
               <p class="font-semibold leading-snug">
                 {p.data.title} <span lang="ko" class="text-xs font-normal text-muted">- {p.data.titleKo}</span>
+                <span title={p.data.agencyKo} class="ml-1 inline-block rounded-full bg-accent/10 px-2 py-0.5 align-[1px] text-[0.7rem] leading-4 font-semibold whitespace-nowrap text-accent-deep">{p.data.agency}</span>
               </p>
-            </td>
-            <td class="px-4 py-3.5 text-muted">
-              <p>{p.data.agency} <span lang="ko" class="text-xs text-faint">- {p.data.agencyKo}</span></p>
             </td>
             <td class="px-4 py-3.5 text-right font-semibold whitespace-nowrap text-brand-navy">{p.data.budget.replace(" (in kind)", "").trim()}{p.data.budget.includes("(in kind)") && <span class="block text-xs font-medium text-muted">(in kind)</span>}</td>
           </tr>

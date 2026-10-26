@@ -17,7 +17,7 @@ const tagStyle: Record<string, string> = { Achievement: red, New: blue, Start: b
 <section id="news" class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
   <SectionHeading title={t('news.title')} />
 
-  <article class="reveal card-a-dark mt-6 grid max-w-4xl items-center gap-5 overflow-hidden rounded-2xl p-5 shadow-xl shadow-brand-navy/10 sm:grid-cols-[1fr_16rem] sm:p-6">
+  <article class="card-a-dark mt-6 grid max-w-4xl items-center gap-5 overflow-hidden rounded-2xl p-5 shadow-xl shadow-brand-navy/10 sm:grid-cols-[1fr_16rem] sm:p-6">
     <div>
       <span class="inline-block rounded-full bg-white/20 px-2.5 py-0.5 text-[0.7rem] font-semibold uppercase tracking-wider">🏆 {t('news.featured')}</span>
       <h3 class="mt-2 text-lg font-bold leading-snug sm:text-xl">
@@ -29,7 +29,7 @@ const tagStyle: Record<string, string> = { Achievement: red, New: blue, Start: b
     </div>
   </article>
 
-  <div class="reveal mt-5" data-collapsible>
+  <div class="mt-5" data-collapsible>
   <div class="overflow-x-auto rounded-2xl border border-line bg-surface shadow-sm">
     <table class="rich rich-blue w-full min-w-[28rem] text-left text-sm">
       <thead class="bg-brand-black text-white">

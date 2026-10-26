@@ -1,7 +1,7 @@
 ---
 // Holo-style heading: small uppercase label over a huge gradient title.
 // On a .section-dark parent the colors switch automatically (see global.css).
-// When it scrolls into view the title wipes in and an accent bar grows under it.
+// An accent bar beside the title runs to the section edge; the whole heading fades in when it scrolls into view.
 interface Props {
   label?: string;
   title: string;
@@ -13,6 +13,8 @@ const { label, title, align = 'left', as: Tag = 'h2' } = Astro.props;
 
 <div class={`reveal heading ${align === 'right' ? 'text-right' : ''}`}>
   {label && <p class="label">{label}</p>}
-  <Tag class="display mt-1">{title}</Tag>
-  <span class={`heading-bar ${align === 'right' ? 'ml-auto' : ''}`} aria-hidden="true"></span>
+  <div class={`mt-1 flex items-center gap-4 sm:gap-6 ${align === 'right' ? 'flex-row-reverse' : ''}`}>
+    <Tag class="display">{title}</Tag>
+    <span class="heading-bar" aria-hidden="true"></span>
+  </div>
 </div>

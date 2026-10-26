@@ -34,10 +34,10 @@ const stats = [
 
   <dl class="mt-6 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
     {stats.map((s, i) => (
-      <div class={`reveal flex items-center justify-between gap-2 rounded-xl px-3 py-3 sm:gap-3 sm:px-5 sm:py-3.5 shadow-lg shadow-brand-navy/10 ${s.style}`} style={`transition-delay:${i * 60}ms`}>
+      <div class={`flex items-center justify-between gap-2 rounded-xl px-3 py-3 sm:gap-3 sm:px-5 sm:py-3.5 shadow-lg shadow-brand-navy/10 ${s.style}`}>
         <dt class="text-xs leading-tight font-semibold text-white/85 sm:text-sm">{s.label.map((l, j) => <>{j > 0 && <br />}{l}</>)}</dt>
         <dd class="text-2xl font-extrabold tracking-tight whitespace-nowrap sm:text-4xl">
-          <span data-count={s.value}>{s.value}</span>{s.sub !== undefined && <span class="ml-1 text-lg font-bold text-white/75 sm:ml-1.5 sm:text-3xl">(<span data-count={s.sub}>{s.sub}</span>)</span>}
+          {s.value}{s.sub !== undefined && <span class="ml-1 text-lg font-bold text-white/75 sm:ml-1.5 sm:text-3xl">({s.sub})</span>}
         </dd>
       </div>
     ))}
@@ -50,7 +50,7 @@ const stats = [
       const head = items.slice(0, PREVIEW);
       const rest = items.slice(PREVIEW);
       return (
-        <div class="reveal">
+        <div>
           <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-b-2 border-brand-black pb-3">
             <h3 class="text-2xl font-extrabold text-brand-black">{g.label}</h3>
             <span class="font-mono text-sm text-faint">{items.length}</span>
@@ -80,7 +80,7 @@ const stats = [
   <!-- Small light cards, same size as the etc. cards in Research. -->
   <ul class="rich rich-blue mt-6 grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-6">
     {awards.map((a, i) => (
-      <li class="reveal overflow-hidden rounded-xl border border-line bg-surface shadow-sm" style={`transition-delay:${i * 60}ms`}>
+      <li class="overflow-hidden rounded-xl border border-line bg-surface shadow-sm">
         {a.data.image && (
           <div class="aspect-[4/3] overflow-hidden bg-card">
             <img src={`/media/awards/${a.data.image}.webp`} alt={a.data.titleKo ?? ''} class="h-full w-full object-cover" style={`object-position:${a.data.imagePos}`} loading="lazy" />

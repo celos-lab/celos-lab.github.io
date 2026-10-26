@@ -16,7 +16,7 @@ const talks = (await getCollection('talks')).sort((a, b) => a.data.order - b.dat
 <section id="talks" class="section-dark">
   <div class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
     <SectionHeading title={title} />
-    <div class="reveal block-dark mt-6 px-5 py-2 sm:px-6" data-collapsible>
+    <div class="block-dark mt-6 px-5 py-2 sm:px-6" data-collapsible>
       <ol class="rich rich-blue divide-y divide-white/10">
         {talks.map((k, i) => (
           <li class={`grid gap-x-5 gap-y-0.5 py-3 sm:grid-cols-[2.5rem_10rem_1fr] ${i >= preview ? 'extra' : ''}`}>

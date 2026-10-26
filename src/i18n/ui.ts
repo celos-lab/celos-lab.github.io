@@ -70,7 +70,7 @@ export const ui = {
   'join.bodyKo':
     '진로면담을 희망하거나, 석박사과정 진학/학부인턴 희망자는 **__설문지를 클릭하여 작성__**해주세요. (5분)',
   'join.body':
-    'If you would like to schedule a meeting with the advisor, **__please click the survey link and complete it__**. (5 mins)',
+    'If you would like to schedule a meeting with the advisor, **__please click the survey link and complete it__**.\u00a0(5\u00a0mins)',
   'join.cta.ko': '설문조사 링크 (한국어)',
   'join.cta.en': 'Survey link (English)',
   'footer.address': 'Room 402, Engineering Building 3, Hanyang University, 55 Hanyangdaehak-ro, Sangnok-gu, Ansan, Gyeonggi-do, Korea (제3공학관 402호)',

@@ -197,7 +197,7 @@ const jsonLd = [
     </a>
 
     <script>
-      // Mobile menu, scroll reveal, active nav item, video playback, back-to-top button.
+      // Mobile menu, section heading reveal, active nav item, video playback, back-to-top button.
       const themeBtn = document.getElementById('theme-btn')!;
       const root = document.documentElement;
       themeBtn.setAttribute('aria-pressed', String(root.classList.contains('dark')));
@@ -255,27 +255,6 @@ const jsonLd = [
       };
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
-
-      // Numbers marked data-count count up from 0 when they come into view (the HTML keeps the final value).
-      const countUp = (el: HTMLElement) => {
-        const target = Number(el.dataset.count);
-        const start = performance.now();
-        const step = (now: number) => {
-          const p = Math.min((now - start) / 1200, 1);
-          el.textContent = String(Math.round(target * (1 - Math.pow(1 - p, 3))));
-          if (p < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-      };
-      const counter = new IntersectionObserver(
-        (entries) => entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          countUp(e.target as HTMLElement);
-          counter.unobserve(e.target);
-        }),
-        { threshold: 0.6 },
-      );
-      document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => counter.observe(el));
 
       const reveal = new IntersectionObserver(
         (entries) => entries.forEach((e) => {

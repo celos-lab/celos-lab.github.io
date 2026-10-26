@@ -10,7 +10,7 @@ interface Props {
 const r = Astro.props.topic.data;
 ---
 
-<article class="reveal block-dark rich p-5 sm:p-6">
+<article class="block-dark rich p-5 sm:p-6">
   <h3 class="text-xl font-extrabold italic leading-tight sm:text-2xl">{r.order}. {r.title}</h3>
   <p class="mt-3 text-sm leading-relaxed text-white/80 sm:text-base" set:html={`● ${rich(r.summary)}`} />
   <details class="group mt-3 text-sm text-white/70">

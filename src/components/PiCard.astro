@@ -11,14 +11,14 @@ const { class: className = 'card-a-dark' } = Astro.props;
 const pi = (await getEntry('members', 'seungho-han'))!.data;
 ---
 
-<article style="transition-delay:250ms" class={`reveal rounded-2xl p-6 shadow-2xl shadow-black/30 sm:p-7 ${className}`}>
-  <div class="flex gap-5">
+<article class={`rounded-2xl p-6 shadow-2xl shadow-black/30 sm:p-7 ${className}`}>
+  <p class="text-sm font-bold">{t('about.welcome')}</p>
+  <div class="mt-4 flex gap-5">
     <img src={`/media/people/${pi.photo}.webp`} alt={pi.name.en} width="480" height="584" class="h-32 w-26 shrink-0 rounded-xl object-cover object-top shadow-lg" loading="lazy" />
     <div class="min-w-0">
       <p class="text-xs font-semibold uppercase tracking-wider text-white/70">{t('about.pi')}</p>
-      <p class="mt-1 text-2xl font-bold">{pi.name.en} <span lang="ko" class="text-base font-medium text-white/70">{pi.name.ko}</span></p>
+      <p class="mt-1 text-2xl font-bold">{pi.name.en} <span class="text-base font-medium text-white/70">Ph.D.</span></p>
       <p class="mt-1 text-sm leading-snug text-white/80">{t('about.pi.title')}</p>
-      <p class="mt-2 text-sm font-bold">{t('about.welcome')}</p>
     </div>
   </div>
   <dl class="mt-5 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">

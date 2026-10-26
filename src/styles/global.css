@@ -131,49 +131,33 @@ body {
 }
 
 /*
- * Scroll reveal: blocks fade up as they enter the viewport (Base.astro adds .is-visible).
+ * Scroll reveal: only section headings (SectionHeading.astro) use it since 2026-10-26; cards and
+ * lists appear without animation (PI decision). The whole heading, title and bar together, fades
+ * in in place (no slide, no left-to-right wipe). Base.astro adds .is-visible.
  * Only active when JavaScript runs (the `js` class on <html>), so content never stays hidden.
- * The PI asked for these to run regardless of the OS "reduce motion" setting (2026-10-25);
- * they are short and have no parallax.
+ * The PI asked for this to run regardless of the OS "reduce motion" setting (2026-10-25).
  */
 .js .reveal {
   opacity: 0;
-  translate: 0 24px;
-  transition: opacity 0.7s ease, translate 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: opacity 1s ease 0.1s;
 }
 .js .reveal.is-visible {
   opacity: 1;
-  translate: 0 0;
 }
 
-/* Section heading: the title wipes in from the left, then an accent bar grows under it. */
+/* Section heading: an accent bar beside the title runs to the edge of the section container. */
 .heading .display {
   padding-bottom: 0.1em;
 }
-.js .heading .display {
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s;
-}
-.js .heading.is-visible .display {
-  clip-path: inset(0 0 0 0);
-}
 .heading-bar {
-  display: block;
-  width: 3.5rem;
+  flex: 1 1 0%;
+  min-width: 2rem;
   height: 4px;
-  margin-top: 0.5rem;
   border-radius: 9999px;
   background: linear-gradient(90deg, var(--color-brand-navy), var(--color-accent-soft));
 }
 .section-dark .heading-bar {
   background: linear-gradient(90deg, #ffffff, var(--color-accent-soft));
-}
-.js .heading-bar {
-  width: 0;
-  transition: width 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.45s;
-}
-.js .heading.is-visible .heading-bar {
-  width: 3.5rem;
 }
 
 /* Reading progress line along the bottom edge of the header. */

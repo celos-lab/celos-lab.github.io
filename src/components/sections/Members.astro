@@ -22,7 +22,7 @@ const initials = (name: string) => name.split(' ').map((w) => w[0]).join('').sli
 
     <h3 class="bar mt-6">{t('members.pi')}</h3>
     <div class="mt-4 grid grid-cols-3 gap-2 sm:gap-4 lg:grid-cols-5">
-      <article class="reveal group block-dark overflow-hidden">
+      <article class="group block-dark overflow-hidden">
         <div class="aspect-[8/5] overflow-hidden bg-white">
           <img src={`/media/people/${pi.photo}.webp`} alt={pi.name.en} width="480" height="584" loading="lazy" class="h-full w-full object-cover object-[center_15%] transition duration-500 group-hover:scale-105" />
         </div>
@@ -36,7 +36,7 @@ const initials = (name: string) => name.split(' ').map((w) => w[0]).join('').sli
     <h3 class="bar mt-8">{t('members.current')}</h3>
     <ul class="mt-4 grid grid-cols-3 gap-2 sm:gap-4 lg:grid-cols-6">
       {current.map((m, i) => (
-        <li class="reveal group block-dark overflow-hidden transition hover:-translate-y-1 hover:border-white/25" style={`transition-delay:${(i % 6) * 60}ms`}>
+        <li class="group block-dark overflow-hidden transition hover:-translate-y-1 hover:border-white/25">
           <div class="aspect-[8/5] overflow-hidden bg-gradient-to-br from-[#1f3a68] via-[#002060] to-[#191919]">
             {m.data.photo ? (
               <img src={`/media/people/${m.data.photo}.webp`} alt={m.data.name.en} width="480" height="600" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" style={`object-position:${m.data.photoPos}`} />
@@ -58,7 +58,7 @@ const initials = (name: string) => name.split(' ').map((w) => w[0]).join('').sli
         <h3 class="bar mt-8">{t('members.alumni')}</h3>
         <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {alumni.map((m) => (
-            <li class="reveal block-dark flex items-center gap-4 p-4">
+            <li class="block-dark flex items-center gap-4 p-4">
               <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-brand-navy text-sm font-bold text-white/80">{initials(m.data.name.en)}</span>
               <div class="min-w-0">
                 <p class="font-semibold">{m.data.name.en}</p>

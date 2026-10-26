@@ -9,7 +9,7 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 <section id="projects" class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
   <SectionHeading title={t('projects.title')} />
   <!-- Phones keep the three columns: smaller type and padding, no minimum width, so Budget stays in view. -->
-  <div class="reveal mt-6 overflow-x-auto rounded-2xl border border-line bg-surface shadow-sm">
+  <div class="mt-6 overflow-x-auto rounded-2xl border border-line bg-surface shadow-sm">
     <table class="w-full text-left text-xs sm:min-w-[40rem] sm:text-sm">
       <thead class="bg-brand-navy text-white">
         <tr>

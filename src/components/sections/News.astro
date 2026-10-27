@@ -6,7 +6,7 @@ import { t } from '../../i18n/ui';
 import { rich } from '../../lib/emph';
 
 const news = (await getCollection('news')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-const PREVIEW = 6;
+const PREVIEW = 11;
 // Three tag colors only: red for achievements, blue for new members and starts, gray for the rest.
 const red = 'bg-celos-red/10 text-celos-red';
 const blue = 'bg-accent/10 text-accent-deep';

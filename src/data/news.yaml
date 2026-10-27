@@ -1,6 +1,11 @@
 # Lab news, newest first. Source: Notion Lab News DB (dates are Notion created dates).
 # Wrap key words in **double asterisks**; they are shown in bold blue in the news table.
 # titleKo (optional) is shown under the English line, only where Korean adds information.
+- id: 2026-10-national-scholarship
+  date: 2026-10-16
+  tag: Achievement
+  title: Doyoon Lee has been selected as a **National Science and Technology Scholarship** recipient, Ministry of Science and ICT
+  titleKo: 과학기술정보통신부 **국가우수장학생(이공계)** 선정
 - id: 2026-08-nrf-core
   date: 2026-08-25
   tag: Achievement

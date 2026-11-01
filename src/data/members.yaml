@@ -2,6 +2,7 @@
 # Source: 1_연구실관리\1_인원\members.md, rows with 공개=Y and 상태=재학/재직 (2026-10-24).
 # Only public fields: English name, course, research topics, photo. Student Korean names and
 # emails are not shown (PI decision 2026-10-25); the PI keeps both.
+# Incoming M.S. students (admitted for 2027-03) use role ms with "(Incoming)"; drop it in 2027-03.
 # role: alumni = former members (members.md 상태 '구성원 아님' who were public on Notion).
 - id: seungho-han
   order: 0
@@ -27,30 +28,72 @@
   photo: pranav-deshmukh
   photoPos: center 25%
 - id: uijin-han
-  order: 2
+  order: 5
   role: undergrad
   name: { en: Ui Jin Han }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: [MPC, F1TENTH, ROS]
   photo: uijin-han
 - id: hyeonseong-lee
-  order: 3
-  role: undergrad
+  order: 2
+  role: ms
   name: { en: Hyeonseong Lee }
-  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  course: { en: M.S. Student (Incoming), ko: 석사과정 (입학예정) }
   topics: [MPC, F1TENTH, ROS]
   photo: hyeonseong-lee
   photoPos: center 62%
 - id: donggyun-woo
-  order: 4
-  role: undergrad
+  order: 3
+  role: ms
   name: { en: Donggyun Woo }
-  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  course: { en: M.S. Student (Incoming), ko: 석사과정 (입학예정) }
   topics: [MPC, CARLA]
   photo: donggyun-woo
 - id: yeonseok-lee
-  order: 5
-  role: undergrad
+  order: 4
+  role: ms
   name: { en: Yeonseok Lee }
+  course: { en: M.S. Student (Incoming), ko: 석사과정 (입학예정) }
+  topics: []
+- id: dagyeom-lee
+  order: 7
+  role: undergrad
+  name: { en: Dagyeom Lee }
+  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  topics: [Humanoid]
+- id: doyun-lee
+  order: 8
+  role: undergrad
+  name: { en: Doyun Lee }
+  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  topics: [Humanoid]
+- id: huiseong-shin
+  order: 9
+  role: undergrad
+  name: { en: Huiseong Shin }
+  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  topics: []
+- id: yunji-lee
+  order: 10
+  role: undergrad
+  name: { en: Yunji Lee }
+  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  topics: []
+- id: jingyu-lee
+  order: 11
+  role: undergrad
+  name: { en: Jingyu Lee }
+  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  topics: []
+- id: seonghyeon-jo
+  order: 12
+  role: undergrad
+  name: { en: Seonghyeon Jo }
+  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  topics: []
+- id: yunbin-eom
+  order: 13
+  role: undergrad
+  name: { en: Yunbin Eom }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []

@@ -3,6 +3,7 @@
 # Only public fields: English name, course, research topics, photo. Student Korean names and
 # emails are not shown (PI decision 2026-10-25); the PI keeps both.
 # Incoming M.S. students (admitted for 2027-03) use role ms with "(Incoming)"; drop it in 2027-03.
+# Student topics are left empty for now (PI decision 2026-11-01); the card hides an empty list.
 # role: alumni = former members (members.md 상태 '구성원 아님' who were public on Notion).
 - id: seungho-han
   order: 0
@@ -17,14 +18,14 @@
   role: phd
   name: { en: Siheon Jo }
   course: { en: Ph.D. Student, ko: 박사과정 }
-  topics: [Multi-object tracking, LiDAR, Camera]
+  topics: []
   photo: siheon-jo
 - id: pranav-deshmukh
   order: 6
   role: undergrad
   name: { en: Pranav Vishal Deshmukh }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
-  topics: [Humanoid, Isaac Sim/Lab, ROS]
+  topics: []
   photo: pranav-deshmukh
   photoPos: center 25%
 - id: uijin-han
@@ -32,14 +33,14 @@
   role: undergrad
   name: { en: Ui Jin Han }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
-  topics: [MPC, F1TENTH, ROS]
+  topics: []
   photo: uijin-han
 - id: hyeonseong-lee
   order: 2
   role: ms
   name: { en: Hyeonseong Lee }
   course: { en: M.S. Student (Incoming), ko: 석사과정 (입학예정) }
-  topics: [MPC, F1TENTH, ROS]
+  topics: []
   photo: hyeonseong-lee
   photoPos: center 62%
 - id: donggyun-woo
@@ -47,7 +48,7 @@
   role: ms
   name: { en: Donggyun Woo }
   course: { en: M.S. Student (Incoming), ko: 석사과정 (입학예정) }
-  topics: [MPC, CARLA]
+  topics: []
   photo: donggyun-woo
 - id: yeonseok-lee
   order: 4
@@ -60,13 +61,13 @@
   role: undergrad
   name: { en: Dagyeom Lee }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
-  topics: [Humanoid]
+  topics: []
 - id: doyun-lee
   order: 8
   role: undergrad
   name: { en: Doyun Lee }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
-  topics: [Humanoid]
+  topics: []
 - id: huiseong-shin
   order: 9
   role: undergrad

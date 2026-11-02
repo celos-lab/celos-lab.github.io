@@ -56,28 +56,28 @@
   course: { en: M.S. Student (Incoming), ko: 석사과정 (입학예정) }
   topics: []
   photo: donggyun-woo
-- id: yeonseok-lee
+- id: yeonsuk-lee
   order: 5
   role: ms
-  name: { en: Yeonseok Lee }
+  name: { en: Yeonsuk Lee }
   course: { en: M.S. Student (Incoming), ko: 석사과정 (입학예정) }
   topics: []
-- id: dagyeom-lee
+- id: dakyeom-lee
   order: 8
   role: undergrad
-  name: { en: Dagyeom Lee }
+  name: { en: Dakyeom Lee }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
-- id: doyun-lee
+- id: doyoon-lee
   order: 9
   role: undergrad
-  name: { en: Doyun Lee }
+  name: { en: Doyoon Lee }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
-- id: huiseong-shin
+- id: heeseong-shin
   order: 10
   role: undergrad
-  name: { en: Huiseong Shin }
+  name: { en: Heeseong Shin }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
 - id: yunji-lee
@@ -86,10 +86,10 @@
   name: { en: Yunji Lee }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
-- id: jingyu-lee
+- id: jinkyu-lee
   order: 12
   role: undergrad
-  name: { en: Jingyu Lee }
+  name: { en: Jinkyu Lee }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
 - id: seonghyeon-jo
@@ -98,9 +98,9 @@
   name: { en: Seonghyeon Jo }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
-- id: yunbin-eom
+- id: yunbeen-eom
   order: 14
   role: undergrad
-  name: { en: Yunbin Eom }
+  name: { en: Yunbeen Eom }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []

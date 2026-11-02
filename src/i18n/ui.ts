@@ -52,7 +52,7 @@ export const ui = {
   'talks.title': 'Invited seminars and workshops',
   'cv.title': 'Prof. Seungho Han',
   'cv.description':
-    'Seungho Han, Assistant Professor at Hanyang University and principal investigator of the CELOS Lab: research experience, education, academic service, invited talks and lectures.',
+    'Seungho Han (한승호), Assistant Professor at Hanyang University ERICA and principal investigator of the CELOS Lab: research experience, education, academic service, invited talks and lectures.',
   'cv.topics': 'Research Topics',
   'cv.topics.value': 'Optimal control, Reinforcement learning-based control, Autonomous vehicle/robot',
   'cv.profile': 'Research profile',

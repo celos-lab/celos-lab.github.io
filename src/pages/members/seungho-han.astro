@@ -38,7 +38,7 @@ const personJsonLd = {
 };
 ---
 
-<Base title={t('cv.title')} description={t('cv.description')} extraJsonLd={[personJsonLd]}>
+<Base title={`${t('cv.title')} (${pi.name.ko}) | Hanyang University ERICA`} description={t('cv.description')} extraJsonLd={[personJsonLd]}>
   <section id="pi" class="section-dark relative overflow-hidden pt-24 pb-10 lg:pb-12">
     <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(800px_circle_at_15%_10%,rgb(0_32_96/0.55),transparent_65%)]"></div>
     <div class="relative mx-auto max-w-5xl px-5 sm:px-8">
@@ -47,7 +47,7 @@ const personJsonLd = {
         <img src="/media/cv/ski.webp" alt="Seungho Han skiing with colleagues" width="688" height="792" class="w-48 rounded-2xl object-cover shadow-2xl shadow-black/50" />
         <div>
           <p class="label">{t('about.pi')}</p>
-          <h1 class="mt-1 text-3xl leading-[1.05] font-extrabold tracking-tight text-white lg:text-4xl">{t('cv.title')}</h1>
+          <h1 class="mt-1 text-3xl leading-[1.05] font-extrabold tracking-tight text-white lg:text-4xl">{t('cv.title')} <span lang="ko" class="text-lg font-semibold text-white/70 lg:text-xl">({pi.name.ko})</span></h1>
           <p class="mt-2 text-sm text-white/80 sm:text-base">{t('about.pi.title')}</p>
           <dl class="mt-4 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
             <div><dt class="text-white/55">Email</dt><dd><a class="font-medium hover:underline" href={`mailto:${links.email}`}>{links.email}</a></dd></div>

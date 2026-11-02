@@ -1,5 +1,5 @@
 # Current members shown on the site.
-# Source: 1_연구실관리\1_인원\members.md, rows with 공개=Y and 상태=재학/재직 (2026-10-24).
+# Source: 1_연구실관리\1_인원\members.md, rows with 공개=Y and 상태=재학/재직, plus 입학예정 (incoming, since 2026-11-02).
 # Only public fields: English name, course, research topics, photo. Student Korean names and
 # emails are not shown (PI decision 2026-10-25); the PI keeps both.
 # Incoming M.S. students (admitted for 2027-03) use role ms with "(Incoming)"; drop it in 2027-03.
@@ -20,8 +20,14 @@
   course: { en: Ph.D. Student, ko: 박사과정 }
   topics: []
   photo: siheon-jo
+- id: yuan-gao
+  order: 2
+  role: phd
+  name: { en: Yuan Gao }
+  course: { en: Integrated Ph.D./M.S. (Incoming), ko: 석박사통합과정 (입학예정) }
+  topics: []
 - id: pranav-deshmukh
-  order: 6
+  order: 7
   role: undergrad
   name: { en: Pranav Vishal Deshmukh }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
@@ -29,14 +35,14 @@
   photo: pranav-deshmukh
   photoPos: center 25%
 - id: uijin-han
-  order: 5
+  order: 6
   role: undergrad
   name: { en: Ui Jin Han }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
   photo: uijin-han
 - id: hyeonseong-lee
-  order: 2
+  order: 3
   role: ms
   name: { en: Hyeonseong Lee }
   course: { en: M.S. Student (Incoming), ko: 석사과정 (입학예정) }
@@ -44,56 +50,56 @@
   photo: hyeonseong-lee
   photoPos: center 62%
 - id: donggyun-woo
-  order: 3
+  order: 4
   role: ms
   name: { en: Donggyun Woo }
   course: { en: M.S. Student (Incoming), ko: 석사과정 (입학예정) }
   topics: []
   photo: donggyun-woo
 - id: yeonseok-lee
-  order: 4
+  order: 5
   role: ms
   name: { en: Yeonseok Lee }
   course: { en: M.S. Student (Incoming), ko: 석사과정 (입학예정) }
   topics: []
 - id: dagyeom-lee
-  order: 7
+  order: 8
   role: undergrad
   name: { en: Dagyeom Lee }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
 - id: doyun-lee
-  order: 8
+  order: 9
   role: undergrad
   name: { en: Doyun Lee }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
 - id: huiseong-shin
-  order: 9
+  order: 10
   role: undergrad
   name: { en: Huiseong Shin }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
 - id: yunji-lee
-  order: 10
+  order: 11
   role: undergrad
   name: { en: Yunji Lee }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
 - id: jingyu-lee
-  order: 11
+  order: 12
   role: undergrad
   name: { en: Jingyu Lee }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
 - id: seonghyeon-jo
-  order: 12
+  order: 13
   role: undergrad
   name: { en: Seonghyeon Jo }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
 - id: yunbin-eom
-  order: 13
+  order: 14
   role: undergrad
   name: { en: Yunbin Eom }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }

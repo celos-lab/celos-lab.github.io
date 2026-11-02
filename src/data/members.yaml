@@ -104,3 +104,9 @@
   name: { en: Yunbeen Eom }
   course: { en: Undergraduate Researcher, ko: 학부연구생 }
   topics: []
+- id: juyeong-lee
+  order: 15
+  role: undergrad
+  name: { en: Juyeong Lee }
+  course: { en: Undergraduate Researcher, ko: 학부연구생 }
+  topics: []

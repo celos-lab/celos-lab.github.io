@@ -25,8 +25,18 @@
   title: "RA-AEB: Risk-Aware Autonomous Emergency Braking for Collision Avoidance via a Risk Assessment Map"
   venue: International Journal of Control, Automation and Systems (IJCAS)
   jcr: Q2, JCR Rank 38.8%
-- id: lee2026evolution
+- id: jang2026dob-eps
   order: 3
+  group: international
+  kind: journal
+  year: 2026
+  status: Accepted
+  authors: Jang, B., Han, S., & Kim, K.-S.
+  title: Disturbance Observer-based Cascaded Steering Control for Mitigating Torque Vibration in EPS Systems
+  venue: International Journal of Control, Automation and Systems (IJCAS)
+  jcr: Q2, JCR Rank 38.8%
+- id: lee2026evolution
+  order: 4
   group: international
   kind: conference
   year: 2026
@@ -35,7 +45,7 @@
   title: "Evolution Fine-Tuning: Learning to Discover Across 371 Optimization Tasks"
   venue: Advances in Neural Information Processing Systems (NeurIPS 2026)
 - id: jang2026battery
-  order: 4
+  order: 5
   group: international
   kind: conference
   year: 2026
@@ -43,7 +53,7 @@
   title: Mechanism of Post-Charge Self-Balancing in Parallel Battery Systems
   venue: IFAC World Congress
 - id: han2026drl-ampc
-  order: 5
+  order: 6
   group: international
   kind: conference
   year: 2026
@@ -52,7 +62,7 @@
   venue: 15th Asian Control Conference (ASCC 2026)
   details: pp. 2321-2326
 - id: bangunharcana2026grpo
-  order: 6
+  order: 7
   group: international
   kind: conference
   year: 2026
@@ -61,7 +71,7 @@
   venue: 15th Asian Control Conference (ASCC 2026)
   details: pp. 2333-2338
 - id: han2026superquadric
-  order: 7
+  order: 8
   group: international
   kind: journal
   year: 2026
@@ -71,7 +81,7 @@
   details: vol. 14, pp. 6635-6646
   jcr: Q2, JCR Rank 33.5%
 - id: kang2025gait
-  order: 8
+  order: 9
   group: international
   kind: conference
   year: 2025
@@ -80,7 +90,7 @@
   venue: 34th IEEE International Conference on Robot and Human Interactive Communication (RO-MAN 2025)
   details: pp. 134-140
 - id: han2025adaptive-roi
-  order: 9
+  order: 10
   group: international
   kind: journal
   year: 2025
@@ -90,7 +100,7 @@
   jcr: Q1, JCR Rank 19.6%
   q1: true
 - id: han2024safety-distance
-  order: 10
+  order: 11
   group: international
   kind: journal
   year: 2024
@@ -100,7 +110,7 @@
   jcr: Q1, JCR Rank 2.4%
   q1: true
 - id: han2024position-uncertainty
-  order: 11
+  order: 12
   group: international
   kind: journal
   year: 2024
@@ -110,7 +120,7 @@
   jcr: Q1, JCR Rank 1.8%
   q1: true
 - id: han2024formation-iros
-  order: 12
+  order: 13
   group: international
   kind: conference
   year: 2024
@@ -118,7 +128,7 @@
   title: The Leader-Follower Formation Control of Nonholonomic Vehicle With Follower-Stabilizing Strategy
   venue: 40th Anniversary of the IEEE Conference on Robotics and Automation (IROS w/ RA-L)
 - id: han2023formation-ral
-  order: 13
+  order: 14
   group: international
   kind: journal
   year: 2023
@@ -129,7 +139,7 @@
   jcr: Q1, JCR Rank 19.8%
   q1: true
 - id: han2023formation-ijcas
-  order: 14
+  order: 15
   group: international
   kind: journal
   year: 2023
@@ -139,7 +149,7 @@
   details: vol. 21, no. 9, pp. 2995-3005
   jcr: Q2, JCR Rank 38.8%
 - id: choi2023msc-rad4r
-  order: 15
+  order: 16
   group: international
   kind: journal
   year: 2023
@@ -150,7 +160,7 @@
   jcr: Q1, JCR Rank 19.8%
   q1: true
 - id: yang2023radar-camera
-  order: 16
+  order: 17
   group: international
   kind: journal
   year: 2023
@@ -160,7 +170,7 @@
   details: vol. 12, pp. 16178-16188
   jcr: Q2, JCR Rank 35.9%
 - id: jang2022dob
-  order: 17
+  order: 18
   group: international
   kind: conference
   year: 2022
@@ -169,7 +179,7 @@
   venue: 13th Asian Control Conference (ASCC 2022)
   details: pp. 744-749
 - id: park2022platform
-  order: 18
+  order: 19
   group: international
   kind: conference
   year: 2022
@@ -178,7 +188,7 @@
   venue: IEEE 46th Annual Computers, Software, and Applications Conference (COMPSAC 2022)
   details: pp. 24-31
 - id: ko2020path
-  order: 19
+  order: 20
   group: international
   kind: conference
   year: 2020
@@ -189,7 +199,7 @@
 
 # --- Domestic --------------------------------------------------------------
 - id: lee2026vr-teleop
-  order: 20
+  order: 21
   group: domestic
   kind: conference
   year: 2026
@@ -198,7 +208,7 @@
   venue: Institute of Korean Electrical and Electronics Engineers (IKEEE), Summer Conference
   award: Excellent Paper Award, Bronze
 - id: jang2026steering
-  order: 21
+  order: 22
   group: domestic
   kind: conference
   year: 2026
@@ -206,7 +216,7 @@
   title: Design of a Steering System Controller for Autonomous Vehicle
   venue: Institute of Control, Robotics and Systems (ICROS)
 - id: cho2026cvar
-  order: 22
+  order: 23
   group: domestic
   kind: conference
   year: 2026
@@ -214,7 +224,7 @@
   title: Risk-Aware Autonomous Braking via CVaR-Based Risk Map
   venue: Institute of Control, Robotics and Systems (ICROS)
 - id: sung2026segmentation
-  order: 23
+  order: 24
   group: domestic
   kind: conference
   year: 2026
@@ -222,7 +232,7 @@
   title: 도로 노면 의미론적 분할 기법의 소수 클래스 불균형 해소를 위한 원근 변환 기반 데이터 증강 기법
   venue: ICROS Undergraduate Paper Competition
 - id: lee2026mecanum
-  order: 24
+  order: 25
   group: domestic
   kind: conference
   year: 2026
@@ -230,7 +240,7 @@
   title: 메카넘휠 기반 이동로봇의 리더-팔로워 군집주행 제어 구현 및 검증
   venue: ICROS Undergraduate Paper Competition
 - id: lee2026osmnx
-  order: 25
+  order: 26
   group: domestic
   kind: conference
   year: 2026
@@ -238,7 +248,7 @@
   title: OSMnx 및 유전 알고리즘 기반 다중 목적지 실시간 경로 최적화 시스템 구현 및 성능 분석
   venue: ICROS Undergraduate Paper Competition
 - id: woo2026nuplan
-  order: 26
+  order: 27
   group: domestic
   kind: conference
   year: 2026
@@ -246,7 +256,7 @@
   title: nuPlan 실데이터 기반 도시별 주행 성향을 반영한 자율주행 보상 함수
   venue: ICROS Undergraduate Paper Competition
 - id: lee2026mppi-offroad
-  order: 27
+  order: 28
   group: domestic
   kind: conference
   year: 2026
@@ -254,7 +264,7 @@
   title: Model Predictive Path Integral-Based Control Implementation for Off-road Autonomous Driving
   venue: Korean Society of Automotive Engineers (KSAE), Spring Conference, Undergraduate Paper Competition
 - id: han2022gps-imu
-  order: 28
+  order: 29
   group: domestic
   kind: conference
   year: 2022
@@ -263,7 +273,7 @@
   venue: Korean Society for Precision Engineering
   details: pp. 412-416
 - id: han2020snow-removal
-  order: 29
+  order: 30
   group: domestic
   kind: journal
   year: 2020
@@ -271,7 +281,7 @@
   title: Path Tracking Algorithm Design for Unmanned Air Force Vehicle for Runway Snow Removal Operation
   venue: Korean Journal of Military Art and Science
 - id: han2020collision-mpc
-  order: 30
+  order: 31
   group: domestic
   kind: conference
   year: 2020
@@ -280,7 +290,7 @@
   venue: Korean Society for Precision Engineering
   details: p. 262
 - id: han2020snow-modeling
-  order: 31
+  order: 32
   group: domestic
   kind: conference
   year: 2020
@@ -289,7 +299,7 @@
   venue: Korean Society of Mechanical Engineers
   details: pp. 157-159
 - id: han2020snow-trailer
-  order: 32
+  order: 33
   group: domestic
   kind: conference
   year: 2020
@@ -300,7 +310,7 @@
 
 # --- Patents and technology transfer ---------------------------------------
 - id: tt2026fallback
-  order: 33
+  order: 34
   group: ip
   kind: transfer
   year: 2026
@@ -308,7 +318,7 @@
   title: Manipulator Fallback Algorithms Using Robust Tube-Based Control
   venue: Technology Transfer (Hanyang Univ.)
 - id: tt2026tube-nn
-  order: 34
+  order: 35
   group: ip
   kind: transfer
   year: 2026
@@ -316,7 +326,7 @@
   title: Tube Neural Networks for Robust Robot Control and Vibration Suppression
   venue: Technology Transfer (Hanyang Univ.)
 - id: patent2025aeb
-  order: 35
+  order: 36
   group: ip
   kind: patent
   year: 2025

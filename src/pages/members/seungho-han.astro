@@ -100,9 +100,9 @@ const personJsonLd = {
                 )}
               </ul>
               {g.media.length > 0 && (
-                // Two or more clips sit side by side in equal columns; other media keep their own sizes.
+                // Two or more clips sit side by side in equal columns (2/3 of max-w-4xl, PI 2026-11-09); other media keep their own sizes.
                 <div class={g.media.length > 1 && g.media.every((m) => m.kind === 'video')
-                  ? 'mt-3 grid max-w-4xl grid-cols-2 gap-3 sm:gap-4'
+                  ? 'mt-3 grid max-w-[37.5rem] grid-cols-2 gap-3 sm:gap-4'
                   : `flex flex-wrap items-end gap-4 ${g.media.every((m) => m.kind === 'image' && m.size === 'tiny') ? 'mt-1.5 pl-3' : 'mt-3'}`}>
                   {g.media.map((m) =>
                     m.kind === 'image' ? (

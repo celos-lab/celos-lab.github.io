@@ -100,12 +100,15 @@ const personJsonLd = {
                 )}
               </ul>
               {g.media.length > 0 && (
-                <div class={`flex flex-wrap items-end gap-4 ${g.media.every((m) => m.kind === 'image' && m.size === 'tiny') ? 'mt-1.5 pl-3' : 'mt-3'}`}>
+                // Two or more clips sit side by side in equal columns; other media keep their own sizes.
+                <div class={g.media.length > 1 && g.media.every((m) => m.kind === 'video')
+                  ? 'mt-3 grid max-w-4xl grid-cols-2 gap-3 sm:gap-4'
+                  : `flex flex-wrap items-end gap-4 ${g.media.every((m) => m.kind === 'image' && m.size === 'tiny') ? 'mt-1.5 pl-3' : 'mt-3'}`}>
                   {g.media.map((m) =>
                     m.kind === 'image' ? (
                       <img src={`/media/cv/${m.src}.webp`} alt={m.alt} class={mediaSize[m.size]} loading="lazy" />
                     ) : m.kind === 'video' ? (
-                      <figure class={mediaSize[m.size]}>
+                      <figure class={g.media.length > 1 && g.media.every((x) => x.kind === 'video') ? 'min-w-0' : mediaSize[m.size]}>
                         <div class="aspect-[800/477] overflow-hidden rounded-lg bg-black"><Video name={`cv/${m.src}`} alt={m.alt} /></div>
                         <figcaption class={`mt-1 text-xs ${c.faint}`}>{m.alt}</figcaption>
                       </figure>

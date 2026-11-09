@@ -97,6 +97,7 @@
       lines:
         - (Spring) **Optimal Control and Reinforcement Learning-Based Control for Autonomous Robots and Driving**
       media:
+        - { kind: video, src: lecture_raytold, alt: "RAY-TOLD (CELOS Lab)", size: wide }
         - { kind: video, src: lecture_spider, alt: "Spider 30 (Diden Robotics)", size: wide }
     - title: Undergraduate Courses
       lines:

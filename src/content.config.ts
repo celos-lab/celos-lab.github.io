@@ -92,7 +92,6 @@ const projects = defineCollection({
     titleKo: z.string(),
     agency: z.string(),
     agencyKo: z.string(),
-    budget: z.string(),
   }),
 });
 

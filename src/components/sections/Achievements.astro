@@ -9,7 +9,9 @@ import { rich } from '../../lib/emph';
 const pubs = (await getCollection('publications')).sort((a, b) => a.data.order - b.data.order);
 const UNDER_REVIEW = 5;
 // Rows visible before "Show all"; the rest stay in the HTML (indexable) inside <details>.
-const PREVIEW = 5;
+// International shows 8 (PI decision 2026-11-10), the other groups 5.
+const PREVIEW: Record<string, number> = { international: 8 };
+const PREVIEW_DEFAULT = 5;
 
 const groups = [
   { key: 'international', label: t('pubs.international') },
@@ -47,8 +49,9 @@ const stats = [
   <div class="mt-6 grid gap-10">
     {groups.map((g) => {
       const items = pubs.filter((p) => p.data.group === g.key);
-      const head = items.slice(0, PREVIEW);
-      const rest = items.slice(PREVIEW);
+      const shown = PREVIEW[g.key] ?? PREVIEW_DEFAULT;
+      const head = items.slice(0, shown);
+      const rest = items.slice(shown);
       return (
         <div>
           <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-b-2 border-brand-black pb-3">

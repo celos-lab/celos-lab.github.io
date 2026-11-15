@@ -19,6 +19,25 @@ const groups = [
   { key: 'ip', label: t('pubs.ip') },
 ] as const;
 
+// Academic partners sit beside the number tiles (moved from Research Goals, PI decision 2026-11-15).
+const partnerGroups = [
+  {
+    label: t('partners.domestic'),
+    items: [
+      { name: 'Korea Institute of Machinery & Materials (KIMM)', logo: 'kimm' },
+      { name: 'KAIST', logo: 'kaist' },
+    ],
+  },
+  {
+    label: t('partners.international'),
+    items: [
+      { name: 'NVIDIA', logo: 'nvidia' },
+      { name: 'University of Michigan', logo: 'umich' },
+      // Stacked logo: drawn taller so it reads at the size of the wide logos.
+      { name: 'University of Minnesota', logo: 'umn', size: 'h-10 sm:h-12' },
+    ],
+  },
+];
 const awards = (await getCollection('awards')).sort((a, b) => a.data.order - b.data.order);
 const count = (g: string) => pubs.filter((p) => p.data.group === g).length;
 const q12 = pubs.filter((p) => p.data.kind === 'journal' && /^Q[12]/.test(p.data.jcr ?? '')).length;
@@ -30,20 +49,38 @@ const stats = [
   { value: awards.length, label: ['Awards'], style: 'bg-brand-black text-white' },
 ];
 ---
-<!-- Achievements: four number tiles, then the publication lists, then the award photo cards. -->
+<!-- Achievements: four number tiles (2x2) beside Academic Partners, then the publication lists, then the award photo cards. -->
 <section id="achievements" class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:py-14">
   <SectionHeading title={t('achievements.title')} />
 
-  <dl class="mt-6 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
-    {stats.map((s, i) => (
-      <div class={`flex items-center justify-between gap-2 rounded-xl px-3 py-3 sm:gap-3 sm:px-5 sm:py-3.5 shadow-lg shadow-brand-navy/10 ${s.style}`}>
-        <dt class="text-xs leading-tight font-semibold text-white/85 sm:text-sm">{s.label.map((l, j) => <>{j > 0 && <br />}{l}</>)}</dt>
-        <dd class="text-2xl font-extrabold tracking-tight whitespace-nowrap sm:text-4xl">
-          {s.value}{s.sub !== undefined && <span class="ml-1 text-lg font-bold text-white/75 sm:ml-1.5 sm:text-3xl">({s.sub})</span>}
-        </dd>
+  <div class="mt-6 grid items-stretch gap-4 lg:grid-cols-2">
+    <dl class="grid grid-cols-2 gap-2 sm:gap-3">
+      {stats.map((s, i) => (
+        <div class={`flex items-center justify-between gap-2 rounded-xl px-3 py-3 sm:gap-3 sm:px-5 sm:py-3.5 shadow-lg shadow-brand-navy/10 ${s.style}`}>
+          <dt class="text-xs leading-tight font-semibold text-white/85 sm:text-sm">{s.label.map((l, j) => <>{j > 0 && <br />}{l}</>)}</dt>
+          <dd class="text-2xl font-extrabold tracking-tight whitespace-nowrap sm:text-4xl">
+            {s.value}{s.sub !== undefined && <span class="ml-1 text-lg font-bold text-white/75 sm:ml-1.5 sm:text-3xl">({s.sub})</span>}
+          </dd>
+        </div>
+      ))}
+    </dl>
+    <article id="partners" class="flex flex-col rounded-2xl border border-line bg-surface p-4 shadow-sm sm:p-5">
+      <h3 class="text-lg font-extrabold text-brand-black">{t('partners.label')}</h3>
+      <!-- Logos stay on white so they read in dark mode too. -->
+      <div class="mt-2 grid flex-1 content-start gap-4 rounded-xl bg-white px-4 py-3 text-brand-black sm:grid-cols-[1fr_1.4fr]">
+        {partnerGroups.map((g) => (
+          <div>
+            <p class="text-xs font-bold sm:text-sm">• {g.label}</p>
+            <ul class="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
+              {g.items.map((p) => (
+                <li><img src={`/media/logos/${p.logo}.png`} alt={p.name} title={p.name} class={`${p.size ?? 'h-6 sm:h-7'} w-auto object-contain`} loading="lazy" /></li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
-    ))}
-  </dl>
+    </article>
+  </div>
 
   <h3 id="publications" class="display mt-12 scroll-mt-20">{t('pubs.title')}</h3>
   <div class="mt-6 grid gap-10">

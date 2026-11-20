@@ -22,8 +22,8 @@ const talks = (await getCollection('talks')).sort((a, b) => a.data.order - b.dat
           <li class={`grid gap-x-5 gap-y-0.5 py-3 sm:grid-cols-[2.5rem_10rem_1fr] ${i >= preview ? 'extra' : ''}`}>
             <span class="font-mono text-xs leading-6 text-white/50">{k.data.year}</span>
             <div>
-              <p class="text-[0.8rem] font-semibold leading-snug">
-                {k.data.host}{k.data.hostKo && <span lang="ko" class="text-[0.7rem] font-normal text-white/55"> - {k.data.hostKo}</span>}
+              <p class="text-[0.85rem] font-semibold leading-snug">
+                {k.data.host}{k.data.hostKo && <span lang="ko" class="text-[0.75rem] font-normal text-white/55"> - {k.data.hostKo}</span>}
               </p>
             </div>
             <div>
